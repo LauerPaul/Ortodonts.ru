@@ -9,12 +9,12 @@ var gulp = require('gulp'),
 
 var source = '_application/',
     dest = 'build/',
+    bootstrapSass = {
+        in: 'bower_components/bootstrap/'
+    },
     path = {
-        bootstrapSass: {
-            in: 'bower_components/bootstrap/',
-        },
         pug: {
-            compile: source + 'template/*.pug',
+            compile: source + 'template/*.pug'
         },
         css: {
             in: source + 'scss/main.scss',
@@ -24,6 +24,7 @@ var source = '_application/',
                 precison: 3,
                 errLogToConsole: true,
                 includePaths: [bootstrapSass.in + 'scss']
+            }
         },
         js: {
             in: source + 'js/*.js',
@@ -53,7 +54,7 @@ var source = '_application/',
 //---------------------------------------------------------
 
 // SCSS
-gulp.task('sass', function () {
+gulp.task('sass', ['fonts'], function () {
     console.log("-- SCSS --");
     return gulp.src(path.css.in)
         .pipe(sass(path.css.sassOpts))
@@ -100,6 +101,7 @@ gulp.task('fonts', function() {
 
 // default task
 gulp.task('default', ['sass', 'scripts', 'pug'], function () {
+    console.log("-- WATCH --");
      gulp.watch(path.watch.css, ['sass']);
      gulp.watch(path.watch.bootstrapCSS, ['sass']);
      gulp.watch(path.watch.pug, ['pug']); 
