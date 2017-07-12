@@ -1,0 +1,23 @@
+#carousel.carousel.slide(data-ride="carousel")
+	ol.carousel-indicators.flex-column
+		li.active(data-target="#carousel", data-slide-to="0")
+		li(data-target="#carousel", data-slide-to="1")
+		li(data-target="#carousel", data-slide-to="2")
+
+	.carousel-inner(role="listbox")
+		.carousel-item.active(style="background: url(images/slider/1.jpg) no-repeat;background-size: cover;", alt="First slide")
+			.carousel-caption.d-flex.align-items-center
+				.flex-column(style="width: 100%")
+					h2.
+						ПЕРЕДОВАЯ ОРТОДОНТИЯ <br> В МОСКВЕ
+					//- p.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+
+					a.btn.btn-primary(href="", target="_blank") Подробнее
+
+
+	//- a.mouse-scroll(onclick="scroll_down()")
+	//- 	span Прокрутите вниз
+	//- 	span.mouse
+	//- 	.down-mouse
+	//- 		i.bottom

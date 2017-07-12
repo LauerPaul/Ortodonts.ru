@@ -1,19 +1,29 @@
+- var menu_list = [{name: 'Главная', link: '../build/index.html'}, {name: 'Обо мне', link: '../build/about.html'},{name: 'Услуги', link: '../build/services.html'}, {name: 'Портфолио', link: '../build/portfolio.html'}, {name: 'Вопрос - Ответ', link: '../build/faq.html'}, {name: 'Блог', link: '../build/blog.html'}, {name: 'Контакты', link: '../build/contacts.html'}];
+
 // HEADER 
 header
-	nav.navbar(role="navigation")
-		button.navbar-toggler.navbar-toggler-right(type="button", data-toggle="collapse", data-target="#HSN", aria-controls="HSN", aria-expanded="false", aria-label="Toggle navigation")
-			span.navbar-toggler-icon
-		.container
-			.navbar-header
-				a.logo-site(href="#")
-					//- img(src="/images/logo.png", alt="ortodonts.ru")
-					|ORTODONTS
+	nav.navbar.navbar-toggleable-md(role="navigation")
 
-			.collapse.navbar-collapse#HSN
+		button.navbar-toggler.navbar-toggler-right(type="button", data-toggle="collapse", data-target="#HSN", aria-controls="HSN", aria-expanded="false", aria-label="Toggle navigation")
+			i.fa.fa-bars(aria-hidden="true")
+
+		.container
+			a.navbar-brand(href="../build/index.html")
+				//- img(src="/images/logo.png", alt="ortodonts.ru")
+				|ORTODONTS
+
+			.collapse.navbar-collapse.flex-row-reverse#HSN
 				ul.nav.navbar-nav
-					li.active
-						a(href="#") Home
-					li
-						a(href="#") Home
+					- menu_list.forEach(function(index){
+
+						- if(index.name == active_menu){
+							li.active
+								a(href= index.link)= index.name
+						- } else {
+							li
+								a(href= index.link)= index.name
+						- }
+
+					- });
 
 // *HEADER* 

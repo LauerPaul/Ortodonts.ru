@@ -13,29 +13,33 @@ var gulp = require('gulp'),
 
 var source = '_application/',
     dest = 'build/',
-    bootstrapSass = {
-        in: 'bower_components/bootstrap/'
+    bower = 'bower_components/',
+    bower_components = {
+        bootstrap: bower + 'bootstrap/',
+        FontAwesome: bower + 'components-font-awesome/',
+        jquery: bower + 'jquery/',
+        tether: bower + 'tether/'
     },
     path = {
         pug: {
             compile: source + 'template/*.pug'
         },
         css: {
-            in: source + 'scss/main.scss',
+            in: [source + 'scss/main.scss', source + 'scss/include/font.scss'],
             out: dest + 'styles/css/',
             sassOpts: {
                 outputStyle: 'nested',
                 precison: 3,
                 errLogToConsole: true,
-                includePaths: [bootstrapSass.in + 'scss']
+                includePaths: [bower_components.bootstrap + 'scss', bower_components.FontAwesome + 'scss']
             }
         },
         js: {
             in: source + 'js/**/*.*',
             out: dest + 'js/',
-            jquery_bower_src: 'bower_components/jquery/dist/jquery.min.js',
-            bootstrap_js_src: bootstrapSass.in + 'dist/js/bootstrap.min.js',
-            tether_src: 'bower_components/tether/dist/js/tether.min.js'
+            jquery_bower_src: bower_components.jquery + 'dist/jquery.min.js',
+            bootstrap_js_src: bower_components.bootstrap + 'dist/js/bootstrap.min.js',
+            tether_src: bower_components.tether + 'dist/js/tether.min.js'
         },
         img: {
             in: source + 'images/**/*.*',
@@ -44,10 +48,8 @@ var source = '_application/',
         fonts: {
             in: source + 'fonts/**/*.*',
             out: dest + 'fonts/',
-            font_awesome_css: 'bower_components/components-font-awesome/css/font-awesome.min.css',
-            font_awesome_map: 'bower_components/components-font-awesome/css/font-awesome.css.map',
-            font_awesome_fonts: 'bower_components/components-font-awesome/fonts/**/*.*',
-            font_awesome_CSSout: dest + 'styles/libs/FontAwesome/',
+
+            font_awesome_fonts: bower_components.FontAwesome + 'fonts/**/*.*',
             font_awesome_out: dest + 'fonts/FontAwesome/'
         },
         watch: {
@@ -66,7 +68,7 @@ var source = '_application/',
 //---------------------------------------------------------
 
 // SCSS
-gulp.task('sass', ['fonts'], function () {
+gulp.task('sass', function () {
     // console.log("-- SCSS --");
     return gulp.src(path.css.in)
         .pipe(sass(path.css.sassOpts))
@@ -110,13 +112,8 @@ gulp.task('awesome', function() {
     gulp.src(path.fonts.font_awesome_fonts)
     .pipe(gulp.dest(path.fonts.font_awesome_out))
 });
-gulp.task('awesomeCSS', function() {
-    // console.log("-- FontAwesome COPY --");
-    gulp.src([path.fonts.font_awesome_css, path.fonts.font_awesome_map])
-    .pipe(gulp.dest(path.fonts.font_awesome_CSSout))
-});
 
-gulp.task('fonts', ['awesome', 'awesomeCSS'], function() {
+gulp.task('fonts', ['awesome'], function() {
     // console.log("-- FONTS COPY --");
     gulp.src(path.fonts.in)
     .pipe(gulp.dest(path.fonts.out))

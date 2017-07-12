@@ -1,0 +1,36 @@
+.mouse-scroll {
+    width: 200px;
+    position: absolute;
+    left: -50%;
+    right: -50%;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    color: white;
+
+    .mouse {
+		width: 20px;
+		height: 30px;
+		background: url(../images/icons/mouse.png) no-repeat center top;
+		display: inline-block;
+		clear: both;
+		margin-top: 5px;
+    }
+
+    .down-mouse {
+	    height: 22px;
+	    display: block;
+
+	    i{
+			margin-right: -1px;
+			position: relative;
+			bottom: 0;
+			animation: mouse 1s forwards 2s infinite;
+			margin-top: 5px;
+			width: 12px;
+			height: 13px;
+			background: url(../images/icons/bottom.png) no-repeat center top;
+			display: inline-block;
+		}
+    }
+}
