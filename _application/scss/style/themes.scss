@@ -43,11 +43,15 @@ section.section-p-80 {
 }
 
 section {
-    h1 {
+    h1, h2 {
         font-size: 42px;
         margin-top: 0px;
         margin-bottom: 20px;
         font-family: "UbuntuBold";
+
+        @media (min-width: 992px) and (max-width: 1229px) {
+            font-size: 36px;
+        }
     }
 }
 

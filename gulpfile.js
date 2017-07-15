@@ -17,8 +17,10 @@ var source = '_application/',
     bower_components = {
         bootstrap: bower + 'bootstrap/',
         FontAwesome: bower + 'components-font-awesome/',
+        FontAwesomeAnimation: bower + 'font-awesome-animation/',
         jquery: bower + 'jquery/',
-        tether: bower + 'tether/'
+        tether: bower + 'tether/',
+        hover: bower + 'hover/'
     },
     path = {
         pug: {
@@ -31,7 +33,12 @@ var source = '_application/',
                 outputStyle: 'nested',
                 precison: 3,
                 errLogToConsole: true,
-                includePaths: [bower_components.bootstrap + 'scss', bower_components.FontAwesome + 'scss']
+                includePaths: [
+                                bower_components.bootstrap + 'scss', 
+                                bower_components.FontAwesome + 'scss', 
+                                bower_components.hover + 'scss', 
+                                bower_components.FontAwesomeAnimation + 'src'
+                                ]
             }
         },
         js: {

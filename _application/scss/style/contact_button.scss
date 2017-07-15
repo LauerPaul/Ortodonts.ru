@@ -1,0 +1,19 @@
+/* Contact button */
+.button-contact {
+    top: 50%;
+	right: 0;
+    z-index: 10;
+    width: auto;
+    right: -92px;
+	position: fixed;
+    cursor: pointer;
+    font-size: 13px;
+	border-radius: 0;
+    padding: 10px 20px;
+	font-weight: normal;
+	letter-spacing: 1px;
+	font-family: "UbuntuBold";
+	text-transform: uppercase;
+    @include transform(rotate(270deg));
+	@include box-shadow(0px 0px 3px 0px rgba(0,0,0,0.1));
+}

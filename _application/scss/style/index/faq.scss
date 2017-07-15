@@ -1,0 +1,19 @@
+/* FAQ */
+.faq-section-index {
+	background: url(../../images/bg/index_faq.jpg) no-repeat center;
+    background-size: cover;
+    position: relative;
+	color: $white;
+
+	&::before {
+		content: '';
+		@include center-absolute();
+		background: rgba(0,0,0,0.47);
+	}
+
+    h1, h2, h3, h4 {
+		color: $white;
+    }
+
+
+}

@@ -71,3 +71,9 @@
         @content;
     }
 }
+
+@mixin transform($param) {
+    -webkit-transform: $param;
+    -ms-transform: $param;
+    transform: $param;
+}

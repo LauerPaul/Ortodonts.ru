@@ -15,7 +15,8 @@
     <script src="js/jquery.min.js"></script>
     <script async="async" src="js/tether.min.js"></script>
     <script async="async" src="js/bootstrap.min.js"></script>
-    <script async="async" src="js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
   </head>
   <body>
     <!-- HEADER -->
@@ -52,25 +53,144 @@
             </div>
           </div>
         </div>
-      </div>
+      </div><a class="mouse-scroll" onclick="scroll_down()"><span>Прокрутите вниз</span>
+        <div class="mouse"></div>
+        <div class="down-mouse"><i class="bottom"></i></div></a>
     </div>
     <!-- ABOUT SECTION -->
-    <section class="about-section-index section-p-80">
+    <section class="about-section-index section-p-80" data-js-init="indexPage">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <h1>Надежда Николаева</h1><span class="description-mini">Врач-ортодонт</span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              
-            </p><a class="btn btn-primary" href="../build/about.html">узнать больше</a>
+            <div class="row">
+              <div class="col-md-4"><img class="doctor-photo" src="images/vrach-ortodont_Nikolaeva_Nadezhda.jpg" alt=""/></div>
+              <div class="col-md-8">
+                <p>
+                  Мой подход к лечению - коррекция положения и размеров зубных рядов, нормализация прикуса и создание оптимального динамического соотношения приводящих и отводящих мышц. Конечный результат - улучшение эстетики лица, красивая улыбка и правильный прикус.
+                  
+                  
+                </p>
+              </div>
+            </div><a class="btn btn-primary hvr-grow-shadow" href="../build/about.html">узнать больше</a>
           </div>
-          <div class="col-md-6"><img class="doctor-photo" src="images/vrach-ortodont_Nikolaeva_Nadezhda.jpg" alt=""/></div>
+          <div class="col-md-6"></div>
         </div>
       </div>
     </section>
     <!-- ABOUT SECTION* -->
+    <!-- Advantages-->
+    <section class="advantages-section-index section-p-80">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-center">Преимущества</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="advantage-wrapper">
+              <div class="advantage-icon" style="background: url(images/advantages/icon_1.png) no-repeat center;"></div>
+              <h4 class="advantage-descriprion">Цифровая ортодонтрия</h4>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="advantage-wrapper">
+              <div class="advantage-icon" style="background: url(images/advantages/icon_2.png) no-repeat center;"></div>
+              <h4 class="advantage-descriprion">Премиум <br/> брекет-системы</h4>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="advantage-wrapper">
+              <div class="advantage-icon" style="background: url(images/advantages/icon_3.png) no-repeat center;"></div>
+              <h4 class="advantage-descriprion">Передовая ортодонтрия</h4>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="advantage-wrapper">
+              <div class="advantage-icon" style="background: url(images/advantages/icon_4.png) no-repeat center;"></div>
+              <h4 class="advantage-descriprion">3D прогноз результата до начала лечения</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- *Advantages*-->
+    <!-- Services-->
+    <section class="services-section-index section-p-80">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center">Услуги</h1>
+          </div>
+        </div>
+        <div class="row services-case-wrapper">
+          <div class="col-md-3"><a class="service-case hvr-grow" href="#">
+              <div class="service-image-wrapper"><img src="images/services/ortodonts.jpg" alt=""/></div>
+              <h4 class="services-title">Ортодонтия</h4>
+              <p class="services-description">Ортодонтическое личение. <br/> Исправление прикуса. <br/> Цифровая ортодонтия, 3D диагностика.</p></a></div>
+          <div class="col-md-3"><a class="service-case hvr-grow" href="#">
+              <div class="service-image-wrapper"><img src="images/services/theraphy.jpg" alt=""/></div>
+              <h4 class="services-title">Терапия</h4>
+              <p class="services-description">Лечение и профилактика кариеса.<br/> Глубокое фторирование.<br/> Подготовка к ортодонти-му лечению.</p></a></div>
+          <div class="col-md-3"><a class="service-case hvr-grow" href="#">
+              <div class="service-image-wrapper"><img src="images/services/Aesthetic.jpg" alt=""/></div>
+              <h4 class="services-title" style="font-size: 15.5px;">Эстетическая стоматология</h4>
+              <p class="services-description">
+                Реставрация и восстановление зубов.<br/> Виниры и люминиры. <br/>Отбеливание и проф. чистка зубов.
+                
+              </p></a></div>
+          <div class="col-md-3"><a class="service-case hvr-grow" href="#">
+              <div class="service-image-wrapper"><img src="images/services/training.jpg" alt=""/></div>
+              <h4 class="services-title">Обучение гигиене</h4>
+              <p class="services-description">Индивидуальный уход за зубами.<br/> Подбор средств гигиены.<br/> Контроль с помощью маркёров.</p></a></div>
+        </div>
+        <div class="row all-services">
+          <div class="col-md-12 text-center"><a class="btn btn-primary hvr-grow-shadow" href="/bild/services.html">все услуги</a></div>
+        </div>
+      </div>
+    </section>
+    <!-- *Services*-->
+    <!-- FAQ -->
+    <section class="section-p-80 faq-section-index">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-center">Часто задаваемые вопросы </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center"><a class="btn btn-primary" href="#">читать дальше</a></div>
+        </div>
+      </div>
+    </section>
+    <!-- *FAQ* -->
     <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 d-flex copyright-wrapper">
+            <p class="copyright">
+              ©Все права защищены
+              <br/>
+              Ortodonts 2017
+              
+            </p>
+          </div>
+          <div class="col-md-4 col-sm-4 text-center">
+            <div class="d-flex flex-nowrap justify-content-around align-items-center"><a class="social d-flex justify-content-center align-items-center faa-parent animated-hover vk" href="#"><i class="fa fa-vk faa-pulse"></i></a><a class="social d-flex justify-content-center align-items-center faa-parent animated-hover" href="#"><i class="fa fa-twitter faa-tada"></i></a><a class="social d-flex justify-content-center align-items-center faa-parent animated-hover" href="#"><i class="fa fa-instagram faa-pulse"></i></a></div>
+          </div>
+          <div class="col-md-4 col-sm-4 d-flex powered-wrapper">
+            <p class="powered">Разработано в &nbsp<a href="#">Lauer</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
     <!-- *FOOTER* -->
+    <!-- Contact button-->
+    <button class="btn btn-danger button-contact" type="button">Записаться на прием</button>
+    <!-- *Contact button*-->
+    <script>app.init();</script>
   </body>
 </html>

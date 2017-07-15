@@ -1,0 +1,25 @@
+// Advatages section index page
+section.advantages-section-index {
+	z-index: 1;
+	position: relative;
+	background: #d1e0f2;
+
+	.advantage-wrapper {
+		max-width: 205px;
+		margin: 0 auto;
+
+		.advantage-icon {
+			width: 120px;
+			height: 90px;
+			margin: 44px auto 35px;
+		}
+
+		.advantage-descriprion {
+    		font-family: "UbuntuBold";
+			font-size: 18px;
+			font-weight: normal;
+			text-align: center;
+			margin: 0px;
+		}
+	}
+}
