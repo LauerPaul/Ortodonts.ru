@@ -20,7 +20,8 @@ var source = '_application/',
         FontAwesomeAnimation: bower + 'font-awesome-animation/',
         jquery: bower + 'jquery/',
         tether: bower + 'tether/',
-        hover: bower + 'hover/'
+        hover: bower + 'hover/',
+        animate: bower + 'animate.css/animate.min.css'
     },
     path = {
         pug: {
@@ -126,9 +127,14 @@ gulp.task('fonts', ['awesome'], function() {
     .pipe(gulp.dest(path.fonts.out))
 });
 
+gulp.task('animateCSS', function() {
+    gulp.src(bower_components.animate)
+    .pipe(gulp.dest(path.css.out))
+});
+
 
 // default task
-gulp.task('default', ['sass', 'scripts', 'pug', 'fonts', 'images'], function () {
+gulp.task('default', ['sass', 'scripts', 'pug', 'fonts', 'images', 'animateCSS'], function () {
      gulp.watch(path.watch.css, ['sass']);
      gulp.watch(path.watch.bootstrapCSS, ['sass']);
      gulp.watch(path.watch.pug, ['pug']);

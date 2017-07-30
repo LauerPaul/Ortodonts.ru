@@ -13,12 +13,14 @@ section.services-section-index {
 		border-radius: 10px;
 		padding-bottom: 15px;
 		text-decoration: none;
-		background: #fdfdfd;
+		border: 1px solid #212431;
+		// background: #fdfdfd;
 		@include transition(all 0.7s);
-		@include box-shadow(0 0px 2px 0 rgba(0,0,0,.35));
+		// @include box-shadow(0 0px 2px 0 rgba(0,0,0,.35));
 
 		&:hover {
-			@include box-shadow(0 2px 2px 0 rgba(0,0,0,.4));
+			border-color: $blue;
+			// @include box-shadow(0 2px 2px 0 rgba(0,0,0,.4));
 		}
 
 		&.opacity {

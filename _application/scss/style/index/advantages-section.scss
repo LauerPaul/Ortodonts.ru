@@ -2,16 +2,18 @@
 section.advantages-section-index {
 	z-index: 1;
 	position: relative;
-	background: #d1e0f2;
+	background: #f7f9ff;
 
 	.advantage-wrapper {
 		max-width: 205px;
 		margin: 0 auto;
 
 		.advantage-icon {
-			width: 120px;
-			height: 90px;
-			margin: 44px auto 35px;
+			width: 110px;
+			height: 110px;
+			margin: 0 auto 35px;
+			border: 2px solid $blue;
+			border-radius: 50%;
 		}
 
 		.advantage-descriprion {

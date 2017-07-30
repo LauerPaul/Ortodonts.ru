@@ -3,20 +3,57 @@ section.about-section-index {
 	position: relative;
 	@include box-shadow(0px 0px 5px 0px rgba(0,0,0,0.75));
 
+	.content-about {
+		margin-top: 70px;
+	}
+
 	p {
-		margin-top: 30px;
-		margin-bottom: 62px;
+		margin-bottom: 0px;
 
 		@media (min-width: 992px) and (max-width: 1229px) {
-		    margin-top: 40px;
-    		margin-bottom: 40px;
 		}
 	}
+	
+	.about-list-advantages {
+
+		.item-about-advantages {
+			margin-top: 40px;
+
+			.icon-item-about-advantages {
+				float: left;
+				width: 50px;
+				height: 50px;
+				background: $blue;
+				margin-right: 30px;
+				display: inline-block;
+				@include border-radius(50%);
+
+
+				&.diploma {
+					background: $blue url(../../images/icon/about/diploma.png) no-repeat center;
+				}
+				&.practice {
+					background: $blue url(../../images/icon/about/practice.png) no-repeat center;
+				}
+				&.certificate {
+					background: $blue url(../../images/icon/about/certificate.png) no-repeat center;
+				}
+			}
+
+			.text-item-about-advantages {
+				float: left;
+				width: 260px;
+				display: inline-block;
+				letter-spacing: 0.1px;
+			}
+		}
+	}
+
+
 
 	.doctor-photo{
 		float: right;
 		max-width: 100%;
-		margin-top: 35px;
-		margin-bottom: 62px;
+		margin-top: 15px;
 	}
 }

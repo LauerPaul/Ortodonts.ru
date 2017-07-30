@@ -4,21 +4,18 @@
 }
 
 .mouse-scroll{
-	width: 90px;
+	width: 200px;
 	position: absolute;
-	left: -50%;
-	right: -50%;
-	bottom: 40px;
-	margin: auto;
-	text-align: center;
+	right: 100px;
+	bottom: 0;
 	color: white;
-	font-family: 'Ubuntu-Light';
+	font-family: 'UbuntuRegular';
 	
 	> span {
 		font-family: "UbuntuRegular";
 		letter-spacing: 0.5px;
 		font-weight: normal;
-		font-size: 9.7px;
+		font-size: 12px;
 		color: $white;
 	}
 	
@@ -43,8 +40,12 @@
 	}
 	
 	.down-mouse{
-		height: 22px;
-		display: block;
+		width: 10px;
+		display: inline-block;
+		position: relative;
+		margin-left: 24px;
+		cursor: pointer;
+		top: -5px;
 		
 		i.bottom{
 			margin-right: -1px;
@@ -52,10 +53,11 @@
 			bottom: 0;
 			animation: mouse 1s forwards 2s infinite;
 			margin-top: 5px;
-			width: 12px;
-			height: 13px;
-			background: url(../../images/icon/bottom.png) no-repeat center top;
+			width: 10px;
+			height: 11px;
+			background: url(../../images/icon/bottom.png) center top no-repeat;
 			display: inline-block;
+			background-size: cover;
 			    
 			&:first-child{
 				margin-bottom: -6px;
@@ -63,25 +65,25 @@
 		}
 	}
 	
-	&:hover{
-		text-decoration: none;
-		cursor: pointer;
-		color: $blue;
+	// &:hover{
+	// 	text-decoration: none;
+	// 	cursor: pointer;
+	// 	color: $blue;
 		
-		.mouse{
-			background-position: center bottom;
-		}
+	// 	.mouse{
+	// 		background-position: center bottom;
+	// 	}
 
-		.down-mouse{	
-			i.bottom{
-				background-position: center bottom;
-			}	
-		}
+	// 	.down-mouse{	
+	// 		i.bottom{
+	// 			background-position: center bottom;
+	// 		}	
+	// 	}
 
-		> span {
-			color: $blue;
-		}
-	}
+	// 	> span {
+	// 		color: $blue;
+	// 	}
+	// }
 	@media (max-width: 320px){
 		display: none;
 	}

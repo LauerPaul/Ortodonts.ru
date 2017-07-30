@@ -13,6 +13,10 @@ header {
 		li {
 			padding: 0 20px;
 
+			&:last-child {
+				padding-right: 0px;
+			}
+
 			@media (max-width: 992px) {
 				text-align: center;
 			}
