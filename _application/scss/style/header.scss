@@ -3,6 +3,46 @@ header {
     z-index: 1;
     position: relative;
 
+    @media (max-width: 991px) {
+		@include box-shadow(none);
+		position: absolute;
+		left: 0;
+		right: 0;
+    }
+
+    .navbar {
+		.navbar-toggler-right {
+			position: absolute;
+			right: 15px;
+			top: 10px;
+			border: 1px solid rgba(255,255,255,0.6);
+			color: white;
+			cursor: pointer;
+		}
+
+	    @media (max-width: 991px) {
+			.container {
+				width: 100%;
+				padding: 5px 15px;
+
+	    	}
+    	}
+    }
+
+	a.navbar-brand { 
+		margin-top: -5px;
+
+		> img {
+    		@media (min-width: 992px) and (max-width: 1229px) {
+				width: 170px;
+			}
+    		@media (max-width: 576px) {
+			    margin-top: 10px;
+				width: 150px;
+    		}
+		}
+    }
+
 	.navbar-nav {
 		padding-top: 39px;
 
@@ -33,7 +73,7 @@ header {
 				font-family: "UbuntuLight";
 
    				@media (min-width: 992px) and (max-width: 1229px) {
-					font-size: 16px;
+					font-size: 15px;
 					padding-bottom: 29px;
 				}
 
@@ -50,7 +90,7 @@ header {
 			&.active {
 				> a {
 					border-bottom: 3px solid;
-					padding-bottom: 38px;
+					padding-bottom: 36px;
 					color: $brand-primary;
 
 					@media (max-width: 992px) {
