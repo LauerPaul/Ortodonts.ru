@@ -2,6 +2,12 @@
 	outline: none;
 }
 
+body {
+    @media (max-width: 991px) {
+        font-size: 0.9rem;
+    }
+}
+
 .btn-primary {
     width: 380px;
     height: 52px;
@@ -52,6 +58,10 @@ section {
         @media (min-width: 992px) and (max-width: 1229px) {
             font-size: 36px;
         }
+
+        @media (max-width: 991px) {
+           font-size: 30px;
+        }
     }
 }
 
@@ -64,4 +74,28 @@ section {
 
 .navbar-brand {
     padding-top: 0px;
+}
+
+.input-group {
+    @media (min-width: 992px) {
+        margin-bottom: 40px;
+    }
+    @media (max-width: 991px) {
+        margin-bottom: 35px;
+    }
+}
+.form-control {
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 0.25px;
+    font-family: "UbuntuBold";
+
+    @media (min-width: 992px) {
+        font-size: 18px;
+    }
+
+    @media (max-width: 991px) {
+        font-size: 16px;
+    }
+
 }

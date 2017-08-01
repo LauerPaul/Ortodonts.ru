@@ -5,10 +5,17 @@
     position: relative;
 	color: $white;
 
+    @media (min-width: 992px) {
+		padding: 100px 0;
+    }
+    @media (max-width: 991px) {
+		padding: 60px 0;
+	}
+
 	&::before {
 		content: '';
 		@include center-absolute();
-		background: rgba(0,0,0,0.47);
+		background: rgba(0,0,0,0.1);
 	}
 
     h1, h2, h3, h4 {

@@ -1,0 +1,30 @@
+// FEDBACK 
+section.section-p-80.feedback-section
+	.container
+		.row
+			.col-md-12
+				h2.text-center Записаться на прием
+
+		form(action="#")#feedback
+			.row
+				.col-md-6
+					.input-group
+						input.form-control(name="first_name", placeholder="Имя", type="text")
+				.col-md-6
+					.input-group
+						input.form-control(name="last_name", placeholder="Фамилия", type="text")
+			.row
+				.col-md-6
+					.input-group
+						input.form-control(name="mail", placeholder="E-mail", type="mail")
+				.col-md-6
+					.input-group
+						input.form-control(name="tel", placeholder="Телефон", type="tel")
+			.row
+				.col-md-12
+					.input-group
+						textarea.form-control(name="message", placeholder="Ваш комментарий")
+			.row
+				.col-md-12
+					.d-flex.justify-content-center
+						button.btn.btn-primary(type="submit") отправить

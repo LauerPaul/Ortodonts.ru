@@ -12,12 +12,13 @@ header {
 
     .navbar {
 		.navbar-toggler-right {
+			border: 1px solid rgba(255,255,255,0.6);
 			position: absolute;
+			cursor: pointer;
+			color: white;
 			right: 15px;
 			top: 10px;
-			border: 1px solid rgba(255,255,255,0.6);
-			color: white;
-			cursor: pointer;
+			z-index: 1;
 		}
 
 	    @media (max-width: 991px) {

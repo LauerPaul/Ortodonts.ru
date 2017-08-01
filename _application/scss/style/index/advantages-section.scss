@@ -2,26 +2,49 @@
 section.advantages-section-index {
 	z-index: 1;
 	position: relative;
-	background: #f7f9ff;
+	background: #f4f6fd;
+
+    @media (max-width: 767px) {
+		padding-bottom: 30px;
+    }
 
 	.advantage-wrapper {
 		max-width: 205px;
 		margin: 0 auto;
 
+	    @media (max-width: 767px) {
+			margin-bottom: 50px;
+		}
+
 		.advantage-icon {
-			width: 110px;
-			height: 110px;
 			margin: 0 auto 35px;
 			border: 2px solid $blue;
 			border-radius: 50%;
+
+	    	@media (min-width: 992px) {
+				width: 110px;
+				height: 110px;
+			}
+
+        	@media (max-width: 991px) {
+				width: 96px;
+				height: 96px;
+			}
+
 		}
 
 		.advantage-descriprion {
     		font-family: "UbuntuBold";
-			font-size: 18px;
 			font-weight: normal;
 			text-align: center;
 			margin: 0px;
+			
+	    	@media (min-width: 992px) {
+				font-size: 18px;
+			}
+        	@media (max-width: 991px) {
+				font-size: 14px;
+			}
 		}
 	}
 }

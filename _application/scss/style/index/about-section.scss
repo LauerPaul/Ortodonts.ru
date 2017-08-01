@@ -4,7 +4,13 @@ section.about-section-index {
 	@include box-shadow(0px 0px 5px 0px rgba(0,0,0,0.75));
 
 	.content-about {
-		margin-top: 70px;
+        @media (min-width: 992px) {
+			margin-top: 70px;
+		}
+
+        @media (max-width: 991px) {
+			margin-top: 40px;
+		}
 	}
 
 	p {
@@ -17,7 +23,12 @@ section.about-section-index {
 	.about-list-advantages {
 
 		.item-about-advantages {
-			margin-top: 40px;
+        	@media (min-width: 992px) {
+				margin-top: 40px;
+			}
+        	@media (max-width: 991px) {
+				margin-top: 25px;
+			}
 
 			.icon-item-about-advantages {
 				float: left;
@@ -55,5 +66,8 @@ section.about-section-index {
 		float: right;
 		max-width: 100%;
 		margin-top: 15px;
+	    @media (max-width: 767px) {
+	    	display: none;
+	    }
 	}
 }
