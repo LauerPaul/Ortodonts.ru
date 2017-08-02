@@ -4,6 +4,19 @@ section.advantages-section-index {
 	position: relative;
 	background: #f4f6fd;
 
+	@media (max-width: 290px) {
+		.col-6 {
+			flex: 0 0 100%;
+			max-width: 100%;
+
+			&:last-child {
+				> .advantage-wrapper {
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}	
+
     @media (max-width: 767px) {
 		padding-bottom: 30px;
     }

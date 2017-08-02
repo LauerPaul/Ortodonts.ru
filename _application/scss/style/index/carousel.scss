@@ -1,5 +1,7 @@
 .carousel {
-
+    @media (max-width: 539px) {
+        display: none;
+    }
 }
 
 .carousel-item {
@@ -90,4 +92,8 @@
     right: -50%;
     margin: auto;
     bottom: 40px; 
+
+    @media (max-width: 575px) {
+        width: 90%
+    }
 }

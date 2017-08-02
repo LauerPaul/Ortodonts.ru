@@ -11,7 +11,7 @@ section.feedback-section {
 			margin-top: 60px;
 		}
         @media (max-width: 991px) {
-			margin-top: 35px;
+			margin-top: 35px 25px 0;
         }
 
 		textarea {
@@ -21,6 +21,9 @@ section.feedback-section {
 		button[type="submit"] {
 			margin-top: 40px;
 			cursor: pointer;
+	        @media (max-width: 991px) {
+	        	margin-top: 15px;
+	        }
 		}
 	}
 }

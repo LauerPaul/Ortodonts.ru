@@ -57,4 +57,9 @@ var indexPage = {
 		var aboutTop = $('.about-section-index').offset().top;
 		$('body').animate({scrollTop: aboutTop}, 1000);
 	}
+},
+wow = {
+	init: function(){
+		new WOW().init();
+	}
 }

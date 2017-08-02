@@ -4,7 +4,19 @@ footer {
 	padding: 30px 0;
 	@include box-shadow(0px 0px 5px 0px rgba(0,0,0,0.75));
 
+	@media (max-width: 440px) {
+		.col-4 {
+			flex: 0 0 100%;
+			max-width: 100%;
+			align-items: center !important;
+		}
+	}
+
 	.copyright-wrapper {
+		@media (max-width: 440px) {
+			display: none !important;
+		}
+
 		.copyright {
 			margin: 0;
 			float: left;
@@ -22,6 +34,21 @@ footer {
 					text-decoration: none;
 				}
 			}
+			
+			@media (max-width: 440px) {
+				width: 100%;
+				margin-top: 20px;
+			}
+
+		}
+
+		&.mobile {
+			@media (min-width: 439px) {
+				display: none !important;
+			}
+			@media (max-width: 440px) {
+				display: block !important;
+			}
 		}
 	}
 
@@ -30,6 +57,9 @@ footer {
 		font-size: 16px;
 		margin: 0px 10px;
 
+		@media (max-width: 440px) {
+		    margin-bottom: 20px;
+		}
 
 		&:hover{
 			font-size: 16px;

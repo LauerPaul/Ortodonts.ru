@@ -21,14 +21,14 @@ var source = '_application/',
         jquery: bower + 'jquery/',
         tether: bower + 'tether/',
         hover: bower + 'hover/',
-        animate: bower + 'animate.css/animate.min.css'
+        animate: bower + 'animate-sass/'
     },
     path = {
         pug: {
             compile: source + 'template/*.pug'
         },
         css: {
-            in: [source + 'scss/main.scss', source + 'scss/include/font.scss'],
+            in: [source + 'scss/main.scss', source + 'scss/include/font.scss', source + 'scss/animate.css'],
             out: dest + 'styles/css/',
             sassOpts: {
                 outputStyle: 'nested',
@@ -38,7 +38,8 @@ var source = '_application/',
                                 bower_components.bootstrap + 'scss', 
                                 bower_components.FontAwesome + 'scss', 
                                 bower_components.hover + 'scss', 
-                                bower_components.FontAwesomeAnimation + 'src'
+                                bower_components.FontAwesomeAnimation + 'src',
+                                bower_components.animate
                                 ]
             }
         },
@@ -127,14 +128,9 @@ gulp.task('fonts', ['awesome'], function() {
     .pipe(gulp.dest(path.fonts.out))
 });
 
-gulp.task('animateCSS', function() {
-    gulp.src(bower_components.animate)
-    .pipe(gulp.dest(path.css.out))
-});
-
 
 // default task
-gulp.task('default', ['sass', 'scripts', 'pug', 'fonts', 'images', 'animateCSS'], function () {
+gulp.task('default', ['sass', 'scripts', 'pug', 'fonts', 'images'], function () {
      gulp.watch(path.watch.css, ['sass']);
      gulp.watch(path.watch.bootstrapCSS, ['sass']);
      gulp.watch(path.watch.pug, ['pug']);

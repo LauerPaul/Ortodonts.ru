@@ -45,7 +45,12 @@ body {
 }
 
 section.section-p-80 {
-    padding: 80px 0;
+    @media (min-width: 540px) {
+        padding: 80px 0;
+    }
+    @media (max-width: 539px) {
+        padding: 50px 0;
+    }
 }
 
 section {

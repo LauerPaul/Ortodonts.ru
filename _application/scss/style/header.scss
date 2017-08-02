@@ -3,19 +3,13 @@ header {
     z-index: 1;
     position: relative;
 
-    @media (max-width: 991px) {
-		@include box-shadow(none);
-		position: absolute;
-		left: 0;
-		right: 0;
-    }
 
     .navbar {
 		.navbar-toggler-right {
 			border: 1px solid rgba(255,255,255,0.6);
 			position: absolute;
 			cursor: pointer;
-			color: white;
+			color: $gray-dark;
 			right: 15px;
 			top: 10px;
 			z-index: 1;
