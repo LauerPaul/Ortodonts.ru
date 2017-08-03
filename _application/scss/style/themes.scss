@@ -53,20 +53,19 @@ section.section-p-80 {
     }
 }
 
-section {
-    h1, h2 {
-        font-size: 42px;
-        margin-top: 0px;
-        margin-bottom: 20px;
-        font-family: "UbuntuBold";
+h1, h2 {
+    font-size: 42px;
+    margin-top: 0px;
+    font-family: "UbuntuBold";
+    margin-bottom: 80px;
 
-        @media (min-width: 992px) and (max-width: 1229px) {
-            font-size: 36px;
-        }
+    @media (min-width: 992px) and (max-width: 1229px) {
+        font-size: 36px;
+    }
 
-        @media (max-width: 991px) {
-           font-size: 30px;
-        }
+    @media (max-width: 991px) {
+        margin-bottom: 40px;
+        font-size: 30px;
     }
 }
 

@@ -1,0 +1,22 @@
+/* ABOUT */
+
+.ortodont_about_text {
+	h3, h4 {
+		color: $blue;
+		font-size: 1.1rem;
+		margin-bottom: 40px;
+    	
+    	@media (max-width: 991px) {
+			margin-bottom: 20px;
+    	}
+	}
+
+	p {
+		margin-bottom: 80px;
+    	
+    	@media (max-width: 991px) {
+    		margin-bottom: 40px;
+    	}
+	}
+	
+}
