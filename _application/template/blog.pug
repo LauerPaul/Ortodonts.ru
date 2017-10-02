@@ -1,0 +1,21 @@
+-var active_menu = 'Блог';
+
+html(lang='ru')
+	include include/common/head
+	body(data-js-init="wow")
+		include include/common/header
+		
+		section.blog-container
+			include include/blog/top-line
+
+			.container.wrapper-columns
+				.row
+					.col-md-12
+						.column-left
+							include include/blog/category-menu
+						.column-right
+					
+					.clearfix
+
+		include include/common/footer
+		include include/common/contact_button
