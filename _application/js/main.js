@@ -223,4 +223,32 @@ AboutPage = {
 		}
 
 	}
+},
+
+BlogPage = {
+	init: function(){
+		// Search blog focus
+		$(document).on('click','.search-case',function(){
+			if(!$(this).hasClass('open')){searchFousBlog()}
+		})
+		// Search blog focusout
+		.on('blur','.search-case input[type="text"]',function(){
+			if($(this).val() == '' || $(this).val() == ' '){searchFousBlog()}
+		})
+		// Current open
+		.on('click','.filters-case',function(){
+			$(this).addClass('open')
+		})
+		// Current hide
+		.on('click',function(e){
+			var current_ = $('.filters-case');
+			if (current_.has(e.target).length === 0){current_.removeClass('open');}
+		});
+
+		function searchFousBlog(){
+			var case_ = $('.search-case');
+			if(case_.hasClass('open')){case_.removeClass('open')}
+			else {case_.addClass('open').find('input').focus()}
+		}
+	}
 }

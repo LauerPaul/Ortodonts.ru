@@ -10,7 +10,7 @@
 			position: relative;
 			
 			.arrow-list {
-				margin-left: 22px;
+				margin-left: 15px;
 				width: 11px;
 				height: 7px;
 				display: inline-block;
@@ -20,8 +20,9 @@
 			.filters-list{
 				display: none;
 				position: absolute;
-				top: calc(100%);
+				top: calc(100% + 5px);
 				width: 150px;
+			    left: -15px;
    				z-index: 10;
 			
 				&:hover {
@@ -40,18 +41,32 @@
 					}
 				}
 			}
-			
+
 			&:hover {
+				color: $blue;
+
+				.arrow-list {
+					background-position: right top;
+				}
+			}
+		}
+
+		&.open {
+			.current{
 				color: $blue;
 				
 				.filters-list{
 					display: block;
+					@include box-shadow(1px 1px 1px 0px rgba(0,0,0,0.5));
+
+					.list-group-item {
+						@include border-radius(0px);
+					}
 				}
 				.arrow-list {
 					background-position: right top;
 				}				
 			}
-
 		}
 	}
 
@@ -65,7 +80,8 @@
 			height: 100%;
 			background: $white;
 			text-align: center;
-			cursor: text;
+			cursor: pointer;
+			font-size: 12px;
 			
 			.search-icon {
 				margin-right: 10px;
