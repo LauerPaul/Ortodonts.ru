@@ -1,0 +1,38 @@
+.category-list-blog {
+	border: 1px solid #212431;
+	@include border-radius(10px);
+	padding: 0px 14px;
+	
+	ul {
+		padding: 0px;
+		margin: 0px;
+		list-style: none;
+		
+		li {
+			text-align: center;
+			height: 60px;
+			border-bottom: 1px solid #b8b9b9;
+					
+			&:last-child {
+				border-bottom: none;
+			}
+
+			a {
+				font-size: 18px;
+				font-family: 'UbuntuMedium';
+				text-decoration: none;
+				color: #212431;
+			    line-height: 20px;
+				    
+				&:hover,
+				&.active {
+					color: #4479e0;
+				}
+			}
+
+			&.active a {
+				color: #4479e0;
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+/* BLOG PAGE */
+.blog-container{
+	background: #f7f9ff;
+	padding-top: 40px;
+	min-height: 100%;
+	
+	.column-left {
+		width: 280px;
+		float: left;
+	}
+	.column-right {
+		width: calc(100% - 300px);
+		float: right;
+	}
+
+	.wrapper-columns {
+		padding-top: 40px;
+	}
+}
+
+@import "top-line";
+@import "category-menu";
