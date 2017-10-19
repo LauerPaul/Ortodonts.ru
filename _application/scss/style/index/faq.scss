@@ -6,7 +6,7 @@
 	color: $white;
 
     @media (min-width: 992px) {
-		padding: 100px 0;
+		padding: 120px 0;
     }
     @media (max-width: 991px) {
 		padding: 60px 0;
@@ -22,5 +22,13 @@
 		color: $white;
     }
 
+	.btn {
+		margin-top: 80px;
+	}
 
+	p {
+		max-width: 580px;
+		margin: 0 auto;
+	    letter-spacing: 0.5px;
+	}
 }

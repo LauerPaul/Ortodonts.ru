@@ -28,7 +28,7 @@ var source = '_application/',
             compile: source + 'template/*.pug'
         },
         css: {
-            in: [source + 'scss/main.scss', source + 'scss/include/font.scss', source + 'scss/animate.css'],
+            in: [source + 'scss/main.scss'],
             out: dest + 'styles/css/',
             sassOpts: {
                 outputStyle: 'nested',
@@ -83,6 +83,7 @@ gulp.task('sass', function () {
         .pipe(sass(path.css.sassOpts))
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sourcemaps.write())
+        .pipe(gulp.dest(path.css.out));
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest(path.css.out));

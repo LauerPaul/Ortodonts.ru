@@ -1,0 +1,158 @@
+/* certificates about */
+.certificates-section {
+	z-index: 1;
+	position: relative;
+	background: #f4f6fd;
+
+	.certificates-slider-wrapper {
+		width: calc(100% + 60px);
+		height: 550px;
+		overflow: hidden;
+		margin-left: -60px;
+		position: relative;
+
+    	@media (max-width: 550px) {
+    		height: 415px;
+    	}
+    	@media (max-width: 550px){
+    		height: auto;
+    		padding-bottom: 15px;
+    	}
+
+		@media (max-width: 767px) {
+			margin-left: 0px;
+			width: 100%;
+		}
+
+		.wrapper-slide {
+			@include transition(all 0.4s);
+
+			@media (max-width: 767px) {
+				width: 100% !important;
+				margin-left: 0px !important;
+			}
+		}
+
+		.arrow-item {
+			width: 42px;
+			height: 42px;
+			border: 1px solid #212431;
+			position: absolute;
+			left: 380px;
+			top: -50%;
+			bottom: -50%;
+			margin: auto;
+			font-size: 22px;
+			text-align: center;
+			padding-top: 8px;
+			cursor: pointer;
+			color: #212431;
+			@include transition(all 0.2s);
+
+			@media (min-width: 992px) and (max-width: 1229px){
+				left: 280px;
+			}
+        	@media (min-width: 768px) and (max-width: 991px) {
+				width: 32px;
+				height: 32px;
+				font-size: 18px;
+				left: 210px;
+        	}
+        	@media (max-width: 767px) {
+				width: 32px;
+				height: 32px;
+				font-size: 18px;
+				left: 0;
+        	}
+        	@media (max-width: 625px) {
+        		left: 20px;
+        	}
+	    	@media (max-width: 550px) and (min-width: 421px){
+	    		left: 40px;
+	    	}
+
+			&.disabled {
+				opacity: 0.5;
+				cursor: default;
+			}
+
+			&.right-arrow {
+				left: auto;
+				right: 320px;
+
+				@media (min-width: 992px) and (max-width: 1229px){
+					right: 240px;
+				}
+	        	@media (min-width: 768px) and (max-width: 991px) {
+					right: 180px;
+	        	}
+	        	@media (max-width: 767px) {
+	        		right: 0;
+	        	}
+	        	@media (max-width: 625px) {
+	        		right: 20px;
+	        	}
+		    	@media (max-width: 550px) and (min-width: 421px){
+		    		right: 40px;
+		    	}
+			}
+
+			&:hover {
+				color: #fff;
+				background-color: #212431;
+			}
+		}
+
+		.certificates-item {
+			margin: 0px 60px;
+			text-align: center;
+			@include transition(opacity 0.3s);
+
+			@media (min-width: 992px) and (max-width: 1229px){
+				margin: 0px 40px;
+			}
+        	@media (min-width: 768px) and (max-width: 991px) {
+				margin: 0px 30px;
+			}
+			
+			img {
+			    max-width: 100%;
+			}
+			
+			&:not(.active) {
+				width: 280px;
+				opacity: 0.9;
+
+				@media (min-width: 992px) and (max-width: 1229px){
+					width: 220px;
+				}
+	        	@media (min-width: 768px) and (max-width: 991px) {
+					width: 165px;
+	        	}
+	        	@media (max-width: 767px) {
+	        		display: none !important;
+	        	}
+			}
+
+			&.active {
+				width: 379px;
+				@include box-shadow(0 1px 5px 0 rgba(0,0,0,.75));
+				opacity: 1;
+
+				@media (min-width: 992px) and (max-width: 1229px){
+					width: 370px;
+				}
+	        	@media (min-width: 768px) and (max-width: 991px) {
+					width: 280px;
+	        	}
+	        	@media (max-width: 767px) {
+					width: 370px;
+					margin: 0 auto !important;
+				}
+	        	@media (max-width: 550px) {
+					width: 280px;
+	        	}
+			}
+		}
+	}
+}

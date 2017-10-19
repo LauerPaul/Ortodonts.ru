@@ -1,0 +1,49 @@
+/* EDUCATION */
+section.education-section {
+	ul {
+		padding-left: 25px;
+		max-width: 980px;
+		margin: 0 auto;
+
+		li {
+			margin-bottom: 40px;
+            list-style-type: none;
+            position: relative;
+
+			&:before {
+		        background-color: $blue;
+		        @include border-radius(50%);
+		        content: "";
+		        display: inline-block;
+		        width: 5px;
+		        height: 5px;
+				position: absolute;
+				line-height: 0px;
+				top: 9px;
+				left: -25px;
+		    }
+
+		    &:last-child {
+		    	margin-bottom: 0px;
+		    }
+		}
+	}
+
+	span.date,
+	span.text {
+		float: left;
+		font-size: 14px;
+		line-height: 24px;
+		letter-spacing: 0.5px;
+	}
+
+	span.date {
+		margin-right: 20px;
+		width: 49px;
+	}
+
+	span.text {
+		display: inline-block;
+		width: calc(100% - 49px - 20px);
+	}
+}

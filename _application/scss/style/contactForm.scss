@@ -18,9 +18,29 @@ section.feedback-section {
 		button[type="submit"] {
 			margin-top: 40px;
 			cursor: pointer;
+			@include transition(all 0.2s);
+
 	        @media (max-width: 991px) {
 	        	margin-top: 15px;
 	        }
+			
+			&:not(.load) {
+				.load {
+					display: none;
+				}
+			}
+
+			&.load {
+				.normal {
+					display: none;
+				}
+
+				i {
+				    margin-right: 10px;
+				}
+
+				opacity: 0.7;
+			}
 		}
 	}
 }

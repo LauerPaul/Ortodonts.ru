@@ -1,3 +1,4 @@
+@import "include/animate";
 /* ---------------------------------------
 Copyright 2017©ortodonts.ru
 dev. Pavel Ugrynovych (Lauer - lauer.com.ua)
@@ -13,6 +14,7 @@ dev. Pavel Ugrynovych (Lauer - lauer.com.ua)
 /* ------------------------------------ */
 /* -------- *Bootstrap END* ----------- */
 /* ------------------------------------ */
+@import "include/font";
 
 /* HEADER */
 @import "style/contact_button";
@@ -26,3 +28,4 @@ dev. Pavel Ugrynovych (Lauer - lauer.com.ua)
 
 @import "style/index/index";
 @import "style/about/about";
+@import "style/services/services";

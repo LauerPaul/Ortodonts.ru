@@ -8,6 +8,11 @@ body {
     }
 }
 
+a.btn:focus,
+a.btn:hover {
+    color: white;
+}
+
 .btn-primary {
     width: 380px;
     height: 52px;
@@ -55,7 +60,7 @@ section.section-p-80 {
 
 h1, h2 {
     font-size: 42px;
-    margin-top: 0px;
+    margin-top: -10px;
     font-family: "UbuntuBold";
     margin-bottom: 80px;
 

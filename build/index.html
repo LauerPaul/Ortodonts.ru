@@ -11,15 +11,11 @@
     <meta property="og:description" content="Брекет системы."/>
     <link rel="icon" type="image/png" href="images/favicon.png"/>
     <title>Ortodonts</title>
-    <link rel="stylesheet" href="styles/css/font.min.css"/>
-    <link rel="stylesheet" href="styles/css/animate.min.css"/>
     <link rel="stylesheet" href="styles/css/main.min.css"/>
     <script src="js/jquery.min.js"></script>
     <script async="async" src="js/tether.min.js"></script>
     <script async="async" src="js/bootstrap.min.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/app.js"></script>
+    <script async="async" src="js/wow.js"></script>
   </head>
   <body data-js-init="wow">
     <!-- HEADER -->
@@ -114,6 +110,9 @@
     <section class="advantages-section-index section-p-80">
       <div class="container">
         <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-center">Преимущества</h2>
+          </div>
           <div class="col-md-3 col-sm-6 col-6">
             <div class="advantage-wrapper">
               <div class="advantage-icon" style="background: url(images/advantages/icon_1.png) no-repeat center;"></div>
@@ -187,7 +186,7 @@
         <div class="row">
           <div class="col-md-12">
             <h2 class="text-center">Часто задаваемые вопросы </h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
           </div>
         </div>
         <div class="row">
@@ -239,7 +238,8 @@
           <div class="row">
             <div class="col-md-12">
               <div class="d-flex justify-content-center">
-                <button class="btn btn-primary hvr-grow-shadow" type="submit">отправить</button>
+                <!-- class load -->
+                <button class="btn btn-primary load hvr-grow-shadow" type="submit"><span class="load"> <i class="fa fa-spinner faa-spin animated"></i>отправка</span><span class="normal">отправить</span></button>
               </div>
             </div>
           </div>
@@ -267,6 +267,7 @@
       </div>
     </footer>
     <!-- *FOOTER* -->
+    <script src="js/main.js"></script>
     <!-- Contact button-->
     <button class="btn btn-danger button-contact" type="button" onclick="indexPage.scroll_contacts()"> <span>Записаться на прием</span><i class="fa fa-phone" aria-hidden="true"></i></button>
     <!-- *Contact button*-->
