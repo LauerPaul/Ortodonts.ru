@@ -8,6 +8,8 @@
 		overflow: hidden;
 		@include border-radius(12px);
 		margin-bottom: 40px;
+		@include box-shadow(0 1px 1px 0 rgba(0,0,0,.3));
+
 
 		.item-cover {
 			width: 280px;
@@ -26,7 +28,7 @@
 			float: left;
 		    width: calc(100% - 280px);
 			display: inline-block;
-			padding: 30px 80px 40px;
+			padding: 30px 80px;
 
 			.item-title {
 				font-family: 'UbuntuLight';
@@ -39,7 +41,7 @@
 
 			.item-text {
 				height: 105px;
-			    color: #b8b9b9;
+			    color: #a2a2a2;
 			    font-size: 14px;
 			    overflow: hidden;
 			    line-height: 21px;
@@ -48,7 +50,7 @@
 			}
 
 			.item-public-date {
-				color: #a5a6a8;
+				color: #a2a2a2;
 				float: left;
 				font-size: 14px;
 				line-height: 31px;

@@ -13,6 +13,7 @@
     <title>Ortodonts</title>
     <link rel="stylesheet" href="styles/css/main.min.css"/>
     <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.lazyload.min.js"></script>
     <script async="async" src="js/tether.min.js"></script>
     <script async="async" src="js/bootstrap.min.js"></script>
     <script async="async" src="js/wow.js"></script>
@@ -39,8 +40,18 @@
     </header>
     <!-- *HEADER* -->
     <!-- Top Section-->
-    <section class="topSection d-flex justify-content-center align-items-center" style="background-image: url(images/bg/about_ortodonts.ru.jpg);">
-      <h1 class="wow fadeIn" style="visibility: hidden;">Обо мне</h1>
+    <section class="topSection" style="background-image: url(images/bg/about_ortodonts.ru.jpg);">
+      <div class="topSectionWrapper d-flex justify-content-center align-items-center">
+        <h1 class="wow fadeIn" style="visibility: hidden;">Обо мне</h1>
+      </div>
+      <div class="container wow zoomIn" data-wow-delay="0.7s">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <nav class="breadcrumb"><a class="breadcrumb-item" href="/index.html">Главная</a><span class="breadcrumb-item active">Обо мне</span>
+            </nav>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- *Top Section*-->
     <!-- Ortodont about text-->

@@ -1,0 +1,18 @@
+nav(aria-label="Page navigation example").pull-right
+	ul.pagination
+		li.page-item
+			a.page-link(href="#", aria-label="Previous")
+				span(aria-hidden="true") &laquo;
+				span.sr-only Previous
+		li.page-item
+			a.page-link(href="#") 1
+		li.page-item
+			a.page-link(href="#") 2
+		li.page-item.disabled
+			span.page-link ...
+		li.page-item.active
+			span.page-link 10
+		li.page-item
+			a.page-link(href="#", aria-label="Next")
+				span(aria-hidden="true") &raquo;
+				span.sr-only Next

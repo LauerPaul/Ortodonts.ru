@@ -1,0 +1,10 @@
+nav.breadcrumb
+	- var i = 0;
+	- breadcrumb.forEach(function(index){
+		- if(i != breadcrumb.length - 1){
+			a.breadcrumb-item(href= index.link)= index.name
+		- } else {
+				span.breadcrumb-item.active= index.name
+		- }
+		- i++;
+	- });

@@ -1,0 +1,19 @@
+-var active_menu = 'Портфолио';
+-var descriptionTop = '';
+-var bg = 'images/bg/portfolio.jpg';
+-var breadcrumb = [{name: "Главная", link: "/index.html"}, {name: "Портфолио", link: ""}];
+
+html(lang='ru')
+	include include/common/head
+	body(data-js-init="wow")
+		include include/common/header
+		
+
+		include include/common/topSection
+		include include/portfolio/categories
+
+		include include/index/faq
+		include include/common/contactForm
+
+		include include/common/footer
+		include include/common/contact_button

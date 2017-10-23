@@ -1,0 +1,21 @@
+-var active_menu = 'Услуги';
+-var descriptionTop = '';
+-var bg = 'images/bg/servicesPage.jpg';
+-var breadcrumb = [{name: "Главная", link: "/index.html"}, {name: "Услуги", link: ""}];
+
+html(lang='ru')
+	include include/common/head
+	body(data-js-init="wow")
+		include include/common/header
+		
+		include include/common/topSection
+
+		include include/services/menu-category
+		include include/services/item-list
+		
+		include include/index/faq
+		include include/common/contactForm
+
+		include include/common/footer
+		include include/common/contact_button
+

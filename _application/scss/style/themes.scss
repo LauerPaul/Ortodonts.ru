@@ -108,3 +108,17 @@ h1, h2 {
     }
 
 }
+.pagination {
+    margin-bottom: 40px;
+}
+.breadcrumb {
+    margin-bottom: 0px;
+}
+.list-inline {
+    @include clearfix;
+    
+    li {
+        display: inline-block;
+        float: left;
+    }
+}

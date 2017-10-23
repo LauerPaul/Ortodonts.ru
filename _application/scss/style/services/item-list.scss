@@ -1,0 +1,45 @@
+/* ITEM LIST */
+.services-items-wrapper {
+	padding-bottom: 80px;
+
+	.item-service{
+
+		.row {
+			.col-6 {
+				&:first-child {
+					padding-right: 0px;
+				}
+				&:last-child {
+					padding-left: 0px;
+				}
+			}
+		}
+
+		.image-item-wrapper {
+			
+		}
+
+		.text-item-wrapper {
+			padding: 80px;
+			
+			.title-item {
+				color: $blue;
+				font-family: 'UbuntuLight';
+				font-weight: bold;
+				font-size: 26px;
+				letter-spacing: 1px;
+				margin-bottom: 30px;
+				line-height: 32px;
+			}
+
+			.description-item {
+				color: #212431;				
+				letter-spacing: 0.5px;
+				line-height: 18px;
+			}
+
+		}
+
+	}
+
+}

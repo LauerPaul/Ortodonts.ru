@@ -1,6 +1,21 @@
 // Top Section
-section.topSection.d-flex.justify-content-center.align-items-center(style="background-image: url(" + bg + ");")
-	h1.wow.fadeIn(style="visibility: hidden;")= active_menu
-	- if(descriptionTop !== "")
-		p= descriptionTop
+
+
+- if (breadcrumb){
+	section.topSection(style="background-image: url(" + bg + ");")
+		.topSectionWrapper.d-flex.justify-content-center.align-items-center
+			h1.wow.fadeIn(style="visibility: hidden;")= active_menu
+			- if(descriptionTop !== "")
+				p= descriptionTop
+		.container.wow.zoomIn(data-wow-delay="0.7s")
+			.row
+				.col-md-12.text-center
+					include breadcrumb
+- }else{
+	section.topSection.d-flex.justify-content-center.align-items-center(style="background-image: url(" + bg + ");")
+		h1.wow.fadeIn(style="visibility: hidden;")= active_menu
+		- if(descriptionTop !== "")
+			p= descriptionTop
+- }
 // *Top Section*
+

@@ -1,0 +1,19 @@
+-var active_menu = 'Контакты';
+-var descriptionTop = '';
+-var bg = 'images/bg/contacts.jpg';
+-var breadcrumb = [{name: "Главная", link: "/index.html"}, {name: "Контакты", link: ""}];
+
+html(lang='ru')
+	include include/common/head
+	body(data-js-init="wow")
+		include include/common/header
+		include include/common/topSection
+
+		include include/contacts/wrapper
+
+		include include/common/contactForm
+
+		include include/common/footer
+		include include/common/contact_button
+
+		script(async, defer, src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB_H5NZztR-HjJNvoHE6KZ_NYPQuWZ7Qo0&callback=ContactsPage.googleMap')

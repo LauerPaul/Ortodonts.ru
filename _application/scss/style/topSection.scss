@@ -4,6 +4,7 @@
 	background-color: #f4f6fd;
     background-size: cover;
     background-position: center;
+    padding-bottom: 40px;
 
     @media (max-width: 696px) {
         min-height: 250px
@@ -19,5 +20,21 @@
     h1 {
     	margin-bottom: 0px;
     }
-    
+
+    .topSectionWrapper {
+        min-height: calc(400px - 25px - 40px);
+    }
+
+    a {
+        color: $white;
+    }
+
+    nav.breadcrumb {
+        display: inline-block;
+    }
+    .breadcrumb-item.active,
+    .breadcrumb-item+.breadcrumb-item::before {
+        color: #d0cfcf;
+        cursor: default;
+    }
 }

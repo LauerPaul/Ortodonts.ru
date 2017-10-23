@@ -24,6 +24,7 @@
 				text-decoration: none;
 				color: #212431;
 			    line-height: 20px;
+			    @include transition(all 0.2s);
 				    
 				&:hover,
 				&.active {

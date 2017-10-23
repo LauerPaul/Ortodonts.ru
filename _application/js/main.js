@@ -64,6 +64,7 @@ function global_function(obj, func = function(){}, call_back = false){
 
 $(document).ready(function($) {
 	app.init();
+	$("img.lazy").lazyload();
 });
 
 var wow = {
@@ -111,8 +112,7 @@ indexPage = {
 		app.developer('load', 'indexPage.services()', 'Вызов функции объекта.');
 		var item_name = 'section.services-section-index .service-case',
 			services_item = $(document).find(item_name);
-
-		if(services_item.length > 0){
+			if(services_item.length > 0){
 			var hover_item = new global_function($(item_name));
 			
 			// FUNCTION ON MOUSEOVER
@@ -152,6 +152,7 @@ settings,
 
 AboutPage = {
 	init: function(){
+		app.developer('load', 'AboutPage.init()', 'Вызов функции.');
 		item = $('.certificates-item'),
 		active = $('.certificates-item.active'),
 		itemLength = item.length,
@@ -227,6 +228,7 @@ AboutPage = {
 
 BlogPage = {
 	init: function(){
+		app.developer('load', 'BlogPage.init()', 'Вызов функции.');
 		// Search blog focus
 		$(document).on('click','.search-case',function(){
 			if(!$(this).hasClass('open')){searchFousBlog()}
@@ -251,4 +253,114 @@ BlogPage = {
 			else {case_.addClass('open').find('input').focus()}
 		}
 	}
+},
+
+PortfolioPage = {
+	init: function(){
+		app.developer('load', 'PortfolioPage.init()', 'Вызов функции.');
+		FeedBackButton();
+		// Wrapper category open
+		$(document).on('click', '.portfolio-category.hide .title-category', function(){
+			$(this).parents('.hide').removeClass('hide');
+		})
+		// show popup gallery
+		.on('click', '.item-portfolio', function(){
+			PortfolioPage.popupGallery($(this).find('img'));
+		})
+		// close gallery popup
+		.on('click', '.wrapper-popup-profile .icon-close', function(){
+			$('.wrapper-popup-profile, .photo-wrapper').animate({'opacity': 0}).hide();
+		})
+		// control gallery popup
+		.on('click', '.wrapper-popup-profile .control-element', function(){
+			var id = '#' + $(this).attr('data-next-id');
+			PortfolioPage.popupGallery($(id), true);
+		});
+	},
+	popupGallery: function(obj, control){
+		var control = typeof(control) == 'undefined' ? false : true,
+			gallery = $('.wrapper-popup-profile'),
+			img_gallery = gallery.find('.photo-wrapper').find('img'),
+			desc_gallery = gallery.find('.photo-description');
+
+		if(control){
+			img_gallery.animate({'opacity': 0});
+			desc_gallery.animate({'opacity': 0});
+		}
+
+		var img = $(obj),
+			src = img.attr('data-big-src'),
+			alt = img.attr('alt'),
+			control_n = $('.control-element.next'),
+			control_p = $('.control-element.prev'),
+			curr_id = img.attr('id'),
+			curr_prefix = $(obj).parents('.portfolio-category').attr('id'),
+			curr_index;
+
+		if(control){
+			img_gallery.animate({'opacity': 1});
+			desc_gallery.animate({'opacity': 1});
+
+			setTimeout(function(){
+				img_gallery.attr('src', src);
+				desc_gallery.text(alt);
+			},400);
+		}
+		else {
+			img_gallery.attr('src', src);
+			desc_gallery.text(alt);
+		
+			gallery.animate({'opacity': 1}).show(function(){
+				$('.photo-wrapper').animate({'opacity': 1}).show('slow');
+			});
+		}
+
+
+		curr_index = parseInt(curr_id.replace(curr_prefix + '_',''));
+
+		var next_el = curr_index + 1,
+			prev_el = curr_index - 1;
+
+		controlEl(next_el, control_n);
+		controlEl(prev_el, control_p);
+
+		function controlEl(a, b){
+			if($(document).find('#' + curr_prefix + '_' + a).length > 0){
+				b.removeClass('ended');
+				b.attr('data-next-id', curr_prefix + '_' + a);
+			}
+			else {
+				b.addClass('ended');
+				b.attr('data-next-id', '');
+			}
+		}
+	},
+},
+// Contacts page
+map,
+ContactsPage = {
+	init: function() {
+	},
+	googleMap: function(){
+		var clinic = {lat: 55.728524, lng: 37.645579};
+
+		map = new google.maps.Map(document.getElementById('map'), {
+		  center: clinic,
+		  zoom: 17
+		});
+
+		// Add a style-selector control to the map.
+        var styleControl = document.getElementById('style-selector-control');
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(styleControl);
+
+        // Set the map's style to the initial value of the selector.
+        map.setOptions({styles: ContactsPage.googleMapStyle});
+		
+		var marker = new google.maps.Marker({
+          position: clinic,
+          map: map,
+          icon: 'images/icon/googleMarker.png'
+        });
+	},
+	googleMapStyle: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
 }

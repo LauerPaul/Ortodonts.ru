@@ -77,3 +77,12 @@
     -ms-transform: $param;
     transform: $param;
 }
+
+// Mixin itself
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
