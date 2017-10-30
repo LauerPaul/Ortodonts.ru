@@ -51,10 +51,10 @@ a.btn:hover {
 
 section.section-p-80 {
     @media (min-width: 540px) {
-        padding: 80px 0;
+        padding: 70px 0;
     }
     @media (max-width: 539px) {
-        padding: 50px 0;
+        padding: 35px 0;
     }
 }
 
@@ -62,7 +62,8 @@ h1, h2 {
     font-size: 42px;
     margin-top: -10px;
     font-family: "UbuntuBold";
-    margin-bottom: 80px;
+    margin-bottom: 70px;
+    color: rgba(0,0,0,.78);
 
     @media (min-width: 992px) and (max-width: 1229px) {
         font-size: 36px;

@@ -163,7 +163,42 @@ AboutPage = {
 		};
 		
 		FeedBackButton();
-		AboutPage.wrapSlide();
+		// AboutPage.wrapSlide();
+		AboutPage.slick('.wrapper-slide');
+	
+		// $(window).resize(function(event) {
+		// 	AboutPage.wrapSlide();
+		// 	$('.wrapper-slide').css('margin-left', 0);
+		// });
+	},
+	slick: function(obj){
+		$(obj).slick({
+		  centerMode: true,
+		  centerPadding: '30px',
+		  slidesToShow: 3,
+          arrows: true,
+          nextArrow: '<div class="right-arrow arrow-item"><i class="fa fa-long-arrow-right"></i></div>',
+		  responsive: [
+		    {
+		      breakpoint: 768,
+		      settings: {
+		        arrows: false,
+		        centerMode: true,
+		        centerPadding: '40px',
+		        slidesToShow: 1
+		      }
+		    },
+		    {
+		      breakpoint: 480,
+		      settings: {
+		        arrows: false,
+		        centerMode: true,
+		        centerPadding: '40px',
+		        slidesToShow: 1
+		      }
+		    }
+		  ]
+		});
 	},
 	wrapSlide: function(){
 			var settings_ ={

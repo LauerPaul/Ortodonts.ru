@@ -2,6 +2,10 @@ section.about-section-index {
 	z-index: 1;
 	position: relative;
 
+	@media (max-width: 580px) {
+		padding: 35px 20px;
+	}
+
 	h1 {
 		margin-bottom: .5rem;
 	}

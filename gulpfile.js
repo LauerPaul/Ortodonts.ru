@@ -21,7 +21,8 @@ var source = '_application/',
         jquery: bower + 'jquery/',
         tether: bower + 'tether/',
         hover: bower + 'hover/',
-        animate: bower + 'animate-sass/'
+        animate: bower + 'animate-sass/',
+        slickSlider: bower + 'slick-carousel/slick/'
     },
     path = {
         pug: {
@@ -48,7 +49,8 @@ var source = '_application/',
             out: dest + 'js/',
             jquery_bower_src: bower_components.jquery + 'dist/jquery.min.js',
             bootstrap_js_src: bower_components.bootstrap + 'dist/js/bootstrap.min.js',
-            tether_src: bower_components.tether + 'dist/js/tether.min.js'
+            tether_src: bower_components.tether + 'dist/js/tether.min.js',
+            slickSlider_src: bower_components.slickSlider + 'dist/js/slick.min.js'
         },
         img: {
             in: source + 'images/**/*.*',
@@ -99,7 +101,7 @@ gulp.task('pug', function () {
 // ECMA SCRIPT (JS)
 gulp.task("scripts", function() {
   // console.log("-- ECMA SCRIPT (JS) --");
-  return gulp.src([path.js.jquery_bower_src, path.js.bootstrap_js_src, path.js.in, path.js.tether_src])
+  return gulp.src([path.js.jquery_bower_src, path.js.bootstrap_js_src, path.js.in, path.js.tether_src, path.js.slickSlider_src])
     .pipe(include())
     .on('error', console.log)
     .pipe(gulp.dest(path.js.out));

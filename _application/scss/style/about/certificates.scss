@@ -1,3 +1,5 @@
+@import "../../include/slick";
+@import "../../include/slick-theme";
 /* certificates about */
 .certificates-section {
 	z-index: 1;
@@ -104,55 +106,23 @@
 		}
 
 		.certificates-item {
-			margin: 0px 60px;
+			margin: 0px 30px;
 			text-align: center;
 			@include transition(opacity 0.3s);
-
-			@media (min-width: 992px) and (max-width: 1229px){
-				margin: 0px 40px;
-			}
-        	@media (min-width: 768px) and (max-width: 991px) {
-				margin: 0px 30px;
-			}
+			width: 280px;
+			opacity: 0.5;
+			float: left;
 			
 			img {
 			    max-width: 100%;
 			}
 			
-			&:not(.active) {
-				width: 280px;
-				opacity: 0.9;
-
-				@media (min-width: 992px) and (max-width: 1229px){
-					width: 220px;
-				}
-	        	@media (min-width: 768px) and (max-width: 991px) {
-					width: 165px;
-	        	}
-	        	@media (max-width: 767px) {
-	        		display: none !important;
-	        	}
+			&.slick-current {
+				opacity: 1 !important;
+				// margin-left: -30px;
+				// margin-right: -30px;
 			}
 
-			&.active {
-				width: 379px;
-				@include box-shadow(0 1px 5px 0 rgba(0,0,0,.75));
-				opacity: 1;
-
-				@media (min-width: 992px) and (max-width: 1229px){
-					width: 370px;
-				}
-	        	@media (min-width: 768px) and (max-width: 991px) {
-					width: 280px;
-	        	}
-	        	@media (max-width: 767px) {
-					width: 370px;
-					margin: 0 auto !important;
-				}
-	        	@media (max-width: 550px) {
-					width: 280px;
-	        	}
-			}
 		}
 	}
 }

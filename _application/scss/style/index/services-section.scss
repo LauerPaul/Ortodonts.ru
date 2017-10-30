@@ -1,6 +1,12 @@
 // Services section index page
 section.services-section-index {
 
+	@media (max-width: 580px) {
+		h1, h2, h3 {
+			margin-bottom: 20px;
+		}
+	}
+
 	.services-case-wrapper {
         @media (min-width: 992px) {
 			margin-top: -10px;
@@ -53,15 +59,15 @@ section.services-section-index {
 		overflow: hidden;
 		margin-top: 10px;
 		border-radius: 10px;
-		padding-bottom: 15px;
+		padding-bottom: 19px;
 		text-decoration: none;
-		border: 1px solid #212431;
+		border: 1px solid rgba(0, 0, 0, 0.12);
 		// background: #fdfdfd;
 		@include transition(all 0.7s);
 		// @include box-shadow(0 0px 2px 0 rgba(0,0,0,.35));
 
 		&:hover {
-			border-color: $blue;
+			border-color: rgba(0, 0, 0, 0.24);
 			@include box-shadow(0 2px 2px 0 rgba(0,0,0,.4));
 			position: relative;
 			z-index: 1;
@@ -88,13 +94,13 @@ section.services-section-index {
 		}
 
 		.services-title {
-			color: $blue;
 			font-size: 18px;
 			margin-top: 35px;
 			text-align: center;
 			font-weight: normal;
-			margin-bottom: 20px;
+			margin-bottom: 15px;
     		font-family: "UbuntuBold";
+    		color: rgba(0,0,0,.7);
 
     		@media (min-width: 768px) {
 				padding: 0px 30px;
@@ -106,20 +112,20 @@ section.services-section-index {
 		}
 		
 		.services-description {
-			font-weight: bold;
-			color: $gray;
+			font-weight: normal;
+			color: rgba(0,0,0,.54);
 			text-align: center;
-			letter-spacing: 0.23px;
+			letter-spacing: 0px;
 			font-family: "UbuntuLight";
 
     		@media (min-width: 768px) {
-				padding: 0px 20px;
-				font-size: 12px;
+				padding: 0px 15px;
+				font-size: 13px;
     		}
 
     		@media (max-width: 767px) {
 				padding: 0px 15px;
-				font-size: 11px;
+				font-size: 12px;
     		}
 
 		}
