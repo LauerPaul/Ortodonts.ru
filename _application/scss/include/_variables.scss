@@ -244,9 +244,9 @@ $grid-gutter-widths: (
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "UbuntuRegular", Arial, sans-serif;
-$font-family-serif:      Georgia, "Times New Roman", Times, serif !default;
-$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-sans-serif: "UbuntuRegular", Arial, sans-serif;
+$font-family-serif:      "UbuntuRegular", "Times New Roman", Times, serif !default;
+$font-family-monospace:  "UbuntuRegular", monospace !default;
 $font-family-base:       $font-family-sans-serif !default;
 
 $font-size-base: 14px; // Assumes the browser default, typically `16px`

@@ -1,60 +1,60 @@
 //Items list
 .blog-items-wrapper {
-	padding-bottom: 40px;
 
 	.item-wrapper {
 		background: $white;
 		position: relative;
 		overflow: hidden;
-		@include border-radius(12px);
+		border-bottom: 1px solid rgba(0,0,0,0.12);
 		margin-bottom: 40px;
-		@include box-shadow(0 1px 1px 0 rgba(0,0,0,.3));
 
 
 		.item-cover {
-			width: 280px;
-			height: 312px;
+			width: 235px;
+			height: 292px;
 			float: left;
 			display: inline-block;
 			overflow: hidden;
 			position: relative;
+			padding-bottom: 30px;
 
 			img {
 				max-height: 100%;
+				max-width: 100%;
 			}
 		}
 
 		.item-text-wrapper {
 			float: left;
-		    width: calc(100% - 280px);
+		    width: calc(100% - 235px);
 			display: inline-block;
-			padding: 30px 80px;
+			padding: 0px 0px 30px 70px;
+   			margin-top: -3px;
 
 			.item-title {
 				font-family: 'UbuntuLight';
 				font-weight: bold;
 				font-size: 18px;
-				color: $blue;
-				padding-bottom: 26px;
+				color: rgba(0,0,0,0.7);
+				padding-bottom: 5px;
 				line-height: 23px;
 			}
 
 			.item-text {
-				height: 105px;
-			    color: #a2a2a2;
+				height: 125px;
 			    font-size: 14px;
 			    overflow: hidden;
 			    line-height: 21px;
-			    margin-bottom: 35px;
+			    margin-bottom: 15px;
 			    letter-spacing: 0.25px;
+				color: rgba(0,0,0,0.54);
 			}
 
 			.item-public-date {
-				color: #a2a2a2;
-				float: left;
-				font-size: 14px;
-				line-height: 31px;
-    			letter-spacing: 0.7px;
+				color: rgba(0,0,0,0.54);
+				font-size: 13px;
+				line-height: 27px;
+				margin-bottom: 15px;
 			}
 
 			.item-button-read {
@@ -69,7 +69,6 @@
 			    letter-spacing: 1.25px;
 			    text-transform: initial;
 			    line-height: 26px;
-			    float: right;
 			}
 		}
 

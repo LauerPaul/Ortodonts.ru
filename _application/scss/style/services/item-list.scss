@@ -23,19 +23,31 @@
 			padding: 80px;
 			
 			.title-item {
-				color: $blue;
+				color: rgba(0,0,0,.7);
 				font-family: 'UbuntuLight';
 				font-weight: bold;
 				font-size: 26px;
 				letter-spacing: 1px;
-				margin-bottom: 30px;
+				margin-bottom: 22px;
 				line-height: 32px;
 			}
 
 			.description-item {
-				color: #212431;				
+				color: rgba(0,0,0,.54);			
 				letter-spacing: 0.5px;
 				line-height: 18px;
+				padding-left: 24px;
+				position: relative;
+
+				&::before {
+					content: '';
+					width: 1px;
+					left: 0;
+					top: 5px;
+					bottom: 2px;
+					background: rgba(0,0,0,.12);
+					position: absolute;
+				}
 			}
 
 		}

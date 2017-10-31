@@ -1,6 +1,8 @@
 .top-line {
-	padding-top: 40px;
-	height: 80px;
+	// padding-top: 40px;
+	height: 40px;
+	border-bottom: 1px solid rgba(0,0,0,0.32);
+	margin-bottom: 30px;
 
 	.filters-case {
 		
@@ -71,7 +73,6 @@
 	}
 
 	.search-case {
-		width: 380px;
 		height: 100%;
 		margin-left: 40px;
 		

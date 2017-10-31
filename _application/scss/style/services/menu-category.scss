@@ -6,20 +6,26 @@
 }
 
 .category-menu-services {
-	margin-bottom: 0px;
+	margin-bottom: 30px;
+    border-bottom: 1px solid rgba(0,0,0,.12);
 	
 	li {
 		width: 280px;
 		height: 60px;
 		color: $white;
-		background: $white;
-		border: 1px solid #212431;
-		@include border-radius(10px);
-		margin: 40px 10px;
+		margin: 30px 10px 0px;
 		line-height: 18px;
+
+		&:first-child {
+			margin-left: 0px;
+		}
+
+		&:last-child {
+			margin-right: 0px;
+		}
 		
 		a {
-			color: $blue;
+			color: rgba(0,0,0,.54);
    			text-align: center;
     		text-decoration: none;
     		letter-spacing: 1px;
@@ -27,25 +33,57 @@
     		font-family: "UbuntuBold";
     		width: 100%;
     		height: 100%;
+    		position: relative;
     		
     		span {
 			    max-width: 180px;
     		}
+
+    		&::after {
+    			content: '';
+    			width: 0%;
+    			height: 0px;
+    			right: 0;
+    			bottom: -1px;
+    			top: auto;
+    			opacity: 0.4;
+    			position: absolute;
+				@include animation(active_elemet_services_out 2s cubic-bezier(0.22, 0.61, 0.36, 1));
+    		}
 		}
 
 		&:hover {
-			border-color: $blue;
+			a {
+				color: $blue;
+			}
 		}
 
 		&.active {
-			background: $blue;
-			border-color: $blue;
 			cursor: default;
 			
 			a {
-				color: $white;
+				color: $blue;
 				cursor: default;
+
+				&::after {
+	    			width: 100%;
+    				height: 4px;
+					opacity: 1;
+					background: $blue;
+					@include animation(active_elemet_services 1s cubic-bezier(0.22, 0.61, 0.36, 1));
+				}
 			}
 		}
 	}
+}
+
+@include keyframes (active_elemet_services){
+	from {opacity: 0.4; width: 0%;height: 0px;}
+	60% {opacity: 0.4; width: 0%;height: 1px;}
+	85% {opacity: 1; width: 100%;height: 1px;}
+	to {opacity: 1;width: 100%;height: 4px;}
+}
+@include keyframes (active_elemet_services_out){
+	from {opacity: 1;background: $blue;}
+	to {opacity: 0; background: $blue;}
 }

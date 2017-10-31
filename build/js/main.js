@@ -281,6 +281,7 @@ BlogPage = {
 			var current_ = $('.filters-case');
 			if (current_.has(e.target).length === 0){current_.removeClass('open');}
 		});
+		$(document).scroll(function(){fixedColumn('.column-right','.category-list-blog');});
 
 		function searchFousBlog(){
 			var case_ = $('.search-case');
@@ -398,4 +399,22 @@ ContactsPage = {
         });
 	},
 	googleMapStyle: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]}]
+},
+
+
+fixedColumn = function(a,b){
+	app.developer('action scroll', 'fixedColumn()', 'Фиксированное меню');
+	var pageH = $(document).outerHeight(),
+		Lb = $(a), // column 1
+		LbH = Lb.outerHeight(),
+		LbT = Lb.offset().top,
+		fixed = $(b), //column fixed
+		fixedH = fixed.outerHeight(),
+		result = pageH - (LbH + LbT),
+		maxBottom = pageH - LbT - (result + fixedH),
+		offset = $(document).scrollTop();
+		value_ = offset <= LbT ? 0 : (offset - LbT < maxBottom ? offset - LbT : maxBottom);
+		fixed.css({
+			'top' : value_
+		});
 }

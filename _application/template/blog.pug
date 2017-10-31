@@ -6,24 +6,20 @@ html(lang='ru')
 	body(data-js-init="wow")
 		include include/common/header
 		
-		section.blog-container
+		section.blog-container(data-js-init='BlogPage')
 		
-			.container
-				.row
-					.col-md-12
-						include include/common/breadcrumb
-		
-			include include/blog/top-line
-
 			.container.wrapper-columns
 				.row
 					.col-md-12
 						.column-left
 							include include/blog/category-menu
 						.column-right
-							include include/blog/item-list
-							include include/common/paginator
+							.white-wrapper
+								include include/blog/top-line
+								include include/blog/item-list
+								include include/common/paginator
 					
+								.clearfix
 					.clearfix
 
 		include include/common/footer
