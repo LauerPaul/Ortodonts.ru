@@ -417,4 +417,19 @@ fixedColumn = function(a,b){
 		fixed.css({
 			'top' : value_
 		});
+},
+
+/*FAQ PAGE*/
+FaqPage = {
+	init: function(){
+		$(document).on('click', '.item-faq .question', function(){
+			var parent = $(this).parent();
+			if(!parent.hasClass('open')){
+				$('.item-faq.open').removeClass('open');	
+				parent.find('.answer').show('slow', function(){
+					parent.addClass('open');
+				});
+			}else{parent.removeClass('open');}
+		});
+	}
 }

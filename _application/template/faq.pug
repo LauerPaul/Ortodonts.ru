@@ -1,0 +1,26 @@
+-var active_menu = 'Вопрос-Ответ';
+
+html(lang='ru')
+	include include/common/head
+	body(data-js-init="wow")
+		include include/common/header
+		
+		section.blog-container(data-js-init='BlogPage')
+		
+			.container.wrapper-columns
+				.row
+					.col-md-12
+						.column-left
+							include include/faq/category-menu
+						.column-right
+							.white-wrapper
+								include include/faq/top-line
+								include include/faq/item-list
+								include include/common/paginator
+					
+								.clearfix
+					.clearfix
+
+		include include/common/footer
+		include include/common/contact_button
+

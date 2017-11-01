@@ -1,0 +1,74 @@
+/* FAQ LIST */
+.wrapper-faq-list {
+	
+	.item-faq {
+		margin-bottom: 24px;
+		border-bottom: 1px solid rgba(0,0,0,.12);
+		
+		.question {
+			font-size: 18px;
+			font-family: 'UbuntuMedium';
+			color: rgba(0,0,0,7);
+			position: relative;
+			padding-left: 40px;
+			cursor: pointer;
+			margin-bottom: 28px;
+			
+			&::before {
+				content: '';
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				top: -50%;
+				bottom: -50%;
+				margin: auto;
+				left: 0;
+				opacity: 0.8;
+				background: url(../../images/icon/list_toggle.png) no-repeat left top;
+				@include transition(opacity 0.4s);
+				@include transition(color 0.4s);
+			}
+
+			&:hover {
+				color: $blue;
+				
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+
+		.answer {
+			margin-top: 30px;
+			padding-left: 40px;
+			height: 0px;
+			overflow: hidden;
+			opacity: 0;
+			color: rgba(0,0,0,0.54);
+			@include transition(all 0.2s);
+			margin-top: 0px;
+		    margin-bottom: 0;
+		}
+
+		&.open {
+
+			.question {
+				margin-bottom: 18px;
+
+				&::before {
+					background-position: right top;
+				}
+			}
+			
+			.answer {
+				height: auto;
+				opacity: 1;
+				display: block;
+				margin-bottom: 24px;
+			}
+
+		}
+
+	}
+
+}
