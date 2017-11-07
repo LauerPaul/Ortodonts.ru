@@ -104,9 +104,9 @@ $pink:   #ff5b77 !default;
 $purple: #613d7c !default;
 
 // Create grayscale
-$gray-dark:                 #212431;
-$gray:                      #424242;
-$gray-light:                #636c72 !default;
+$gray-dark:                 rgba(0,0,0,.78);
+$gray:                      rgba(0,0,0,.7);
+$gray-light:                rgba(0,0,0,.54);
 $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 
@@ -182,8 +182,8 @@ $sizes: (
 // Settings for the `<body>` element.
 
 $body-bg:       $white !default;
-$body-color:    $gray-dark !default;
-$inverse-bg:    $gray-dark !default;
+$body-color:    $gray;
+$inverse-bg:    $gray;
 $inverse-color: $gray-lighter !default;
 
 
