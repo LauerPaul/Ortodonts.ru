@@ -1,39 +1,12 @@
+@import "menu-category";
+
 /* PORTFOLIO */
 .portfolio-wrapper {
 }
 
 /* PORTFOLIO CATEGORY */
 .portfolio-category {
-	padding-top: 40px;
 	padding-bottom:40px;
-	
-	&.grey {
-		border-top: 1px solid #e7e7e7;
-	}
-
-	&.hide {
-		.wrap {
-			opacity: 0;
-			display: none;
-			@include transition(all 0.4s);
-		}
-	
-		.title-category {
-			padding-bottom: 40px;
-			
-			&:hover {
-				color: $blue;
-			}
-		}
-
-	}
-	
-	.title-category {
-		padding-top: 40px;
-		padding-bottom:80px;
-		margin-bottom: 0px;
-		cursor: pointer;
-	}
 	
 	.item-portfolio {
 		max-width: 100%;

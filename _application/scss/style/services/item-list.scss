@@ -31,8 +31,9 @@
 			}
 
 			@media (max-width: 991px) {
-
+			    padding: 5px 20px 5px 20px;
 			}
+			
 			
 			.title-item {
 				color: rgba(0,0,0,.7);
@@ -42,6 +43,10 @@
 				letter-spacing: 1px;
 				margin-bottom: 22px;
 				line-height: 32px;
+				
+				@media (max-width: 991px) {
+					font-size: 21px;
+				}
 			}
 
 			.description-item {
@@ -50,6 +55,11 @@
 				line-height: 18px;
 				padding-left: 24px;
 				position: relative;
+				
+				@media (max-width: 991px) {
+					font-size: 14px;
+					@include clamp(8, 145px);
+				}
 
 				&::before {
 					content: '';

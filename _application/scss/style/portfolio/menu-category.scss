@@ -1,11 +1,14 @@
 /* CATEGORY MENU */
-.services-menu-wrapper {
-	// background: $blue;
+.portfolio-menu-wrapper {
 	margin-top: 40px;
 	margin-bottom: 40px;
+
+	.wrap {
+		width: 100%;
+	}
 }
 
-.category-menu-services {
+.category-menu-portfolio {
 	margin-bottom: 30px;
     border-bottom: 1px solid rgba(0,0,0,.12);
 	
@@ -86,15 +89,4 @@
 			}
 		}
 	}
-}
-
-@include keyframes (active_elemet_services){
-	from {opacity: 0.4; width: 0%;height: 0px;}
-	60% {opacity: 0.4; width: 0%;height: 1px;}
-	85% {opacity: 1; width: 100%;height: 1px;}
-	to {opacity: 1;width: 100%;height: 4px;}
-}
-@include keyframes (active_elemet_services_out){
-	from {opacity: 1;background: $blue;}
-	to {opacity: 0; background: $blue;}
 }
