@@ -10,21 +10,60 @@
 		padding-right: 0px;
 	    padding-left: 80px;
 	    position: relative;
+        height: 100%;
+
+	    @media (max-width: 1229px) {
+			width: 308px;
+		    padding-left: 10px;
+	    }
+	    @media (max-width: 991px) {
+			display: none;
+	    }
 	}
 	.column-right {
 		width: calc(100% - 380px);
 		float: right;
 		padding-left: 0px;
+	
+	    @media (max-width: 1229px) {
+			width: calc(100% - 308px);
+	    }
+
+	    @media (max-width: 991px) {
+			width: 100%;
+	    }
 	}
 
 	.wrapper-columns {
-		// padding-top: 40px;
+		@media (max-width: 767px) {
+			width: 100%;
+			// padding: 0px;
+		}
 	}
 
 	.white-wrapper {
 		background: $white;
 		padding: 40px;
 		padding-top: 50px;
+
+	    @media (max-width: 991px) {
+	    	padding-top: 90px;
+	    }
+
+		&::before {
+		    content: "";
+		    position: fixed;
+		    z-index: 0;
+		    background: white;
+		    top: 0;
+		    right: 0;
+		    bottom: 0;
+		    left: 50%;
+
+		    @media (max-width: 991px) {
+		    	display: none;
+		    }
+		}
 	}
 }
 

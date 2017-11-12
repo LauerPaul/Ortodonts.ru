@@ -1,17 +1,9 @@
 /* Top Section */
 .topSection {
-	min-height: 400px;
 	background-color: #f4f6fd;
     background-size: cover;
     background-position: center;
     padding-bottom: 40px;
-
-    @media (max-width: 696px) {
-        min-height: 250px
-    }
-    @media (max-width: 500px) {
-        min-height: 160px;
-    }
 
     h1, h2, h3, h4, h5, p {
     	color: #ffffff;
@@ -23,6 +15,10 @@
 
     .topSectionWrapper {
         min-height: calc(400px - 25px - 40px);
+
+        @media (max-width: 991px) {
+            min-height: calc(200px - 25px - 40px);
+        }
     }
 
     a {

@@ -7,6 +7,7 @@ body {
     
     @media (max-width: 991px) {
         font-size: 0.9rem;
+        padding-top: 48px;
     }
 }
 
@@ -52,9 +53,12 @@ a.btn:hover {
 }
 
 section.section-p-80 {
-    @media (min-width: 540px) {
-        padding: 70px 0;
+    padding: 70px 0;
+
+    @media (max-width: 767px) {
+        padding: 55px 0;
     }
+
     @media (max-width: 539px) {
         padding: 35px 0;
     }
@@ -74,6 +78,11 @@ h1, h2 {
     @media (max-width: 991px) {
         margin-bottom: 40px;
         font-size: 30px;
+    }
+
+    @media (max-width: 767px) {
+        font-size: 26px;
+        margin-bottom: 35px;
     }
 }
 
@@ -106,8 +115,13 @@ h1, h2 {
         font-size: 18px;
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: 991px) and (min-width: 768px) {
         font-size: 16px;
+    }
+
+    @media (max-width: 767px) {
+        font-size: 14px;
+        padding: 10px 15px;
     }
 
 }

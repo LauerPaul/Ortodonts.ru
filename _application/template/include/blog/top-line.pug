@@ -1,16 +1,23 @@
 .container.top-line(data-js-init="BlogPage")
 	.row
 		.col-md-12
-			.pull-right.d-flex.align-items-center
-				//- .filters-case.pull-left
-				//- 	.current Сортировка
-				//- 		i.arrow-list
-				//- 		ul.list-group.filters-list
-				//- 			li.list-group-item
-				//- 				a По дате
-				//- 			li.list-group-item
-				//- 				a По названию
-				
+			.pull-right.d-flex.align-items-center.justify-content-end
+				.filters-case
+					.current 
+						span Категории
+						i.arrow-list
+						ul.list-group.filters-list
+							li.list-group-item
+								a(href="#") Красота и здоровье
+							li.list-group-item 
+								a(href="#") Уход и гигиена
+							li.list-group-item.active 
+								a(href="#") Терапевтия
+							li.list-group-item 
+								a(href="#") Ортодонтическое лечение
+							li.list-group-item 
+								a(href="#") Брекет системы
+			
 				// .open
 				.search-case.pull-left
 					.wrapper-hide.d-flex.align-items-center.justify-content-center 

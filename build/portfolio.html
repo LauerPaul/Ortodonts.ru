@@ -22,9 +22,10 @@
     <!-- HEADER -->
     <header>
       <nav class="navbar navbar-toggleable-md" role="navigation">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#HSN" aria-controls="HSN" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars" aria-hidden="true"></i></button>
+        <button class="navbar-toggler navbar-toggler-right" type="button" onclick="mobile.menu()"><i class="fa fa-bars" aria-hidden="true"></i></button>
         <div class="container"><a class="navbar-brand" href="../build/index.html"><img src="images/ortodonts_logo.png" alt="ortodonts.ru"/><img class="scroll" src="images/ortodonts_logo_scroll.png" alt="ortodonts.ru"/></a>
-          <div class="collapse navbar-collapse flex-row-reverse" id="HSN">
+          <div class="shawl-mobile"></div>
+          <div class="flex-row-reverse" id="HSN">
             <ul class="nav navbar-nav">
               <li><a href="../build/index.html">Главная</a></li>
               <li><a href="../build/about.html">Обо мне</a></li>
@@ -34,6 +35,24 @@
               <li><a href="../build/blog.html">Блог</a></li>
               <li><a href="../build/contacts.html">Контакты</a></li>
             </ul>
+            <div class="mobile-footer-menu">
+              <footer>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-12 text-center d-flex flex-nowrap justify-content-center">
+                      <div class="d-flex flex-nowrap justify-content-center"><a class="social d-flex justify-content-center align-items-center faa-parent animated-hover vk" href="#"><i class="fa fa-vk faa-pulse"></i></a><a class="social d-flex justify-content-center align-items-center faa-parent animated-hover" href="#"><i class="fa fa-twitter faa-tada"></i></a><a class="social d-flex justify-content-center align-items-center faa-parent animated-hover" href="#"><i class="fa fa-instagram faa-pulse"></i></a></div>
+                    </div>
+                    <div class="col-12 contacts-footer d-flex align-items-center flex-column">
+                      <div><a href="tel:+74959702078" target="_blank">+7 (495) 970-20-78</a></div>
+                      <div><a href="tel:+74959702078" target="_blank">+7 (985) 970-20-78</a></div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-4 d-flex copyright-wrapper mobile">
+                      <p class="copyright">Разработано в &nbsp<a href="https://lauer.agency/" target="_blank">Lauer</a><br/>2017©Ortodonts.ru</p>
+                    </div>
+                  </div>
+                </div>
+              </footer>
+            </div>
           </div>
         </div>
       </nav>
@@ -187,38 +206,38 @@
         </div>
         <form action="#" id="feedback">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6">
               <div class="input-group">
                 <input class="form-control" name="first_name" placeholder="Имя" type="text"/>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6">
               <div class="input-group">
                 <input class="form-control" name="last_name" placeholder="Фамилия" type="text"/>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6">
               <div class="input-group">
                 <input class="form-control" name="mail" placeholder="E-mail" type="mail"/>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6">
               <div class="input-group">
                 <input class="form-control" name="tel" placeholder="Телефон" type="tel"/>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-12">
               <div class="input-group">
                 <textarea class="form-control" name="message" placeholder="Ваш комментарий"></textarea>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-12">
               <div class="d-flex justify-content-center">
                 <!-- class load -->
                 <button class="btn btn-primary load hvr-grow-shadow" type="submit"><span class="load"> <i class="fa fa-spinner faa-spin animated"></i>отправка</span><span class="normal">отправить</span></button>

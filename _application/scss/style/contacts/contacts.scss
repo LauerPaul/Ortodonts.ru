@@ -3,6 +3,29 @@
 	padding-top: 60px;
 	padding-bottom: 60px;
 
+	.mobi-hide-info {
+		@media (max-width: 767px){
+			display: none !important;
+		}
+	}
+
+	.mobi-visible-info {
+		@media (min-width: 768px) {
+			display: none !important;
+		}
+	}
+
+    @media (max-width: 991px) {
+		padding-top: 24px;
+		padding-bottom: 24px;
+
+		.justify-content-center {
+		    justify-content: start!important;
+	        padding-left: 30px;
+	        padding-right: 30px;
+		}
+    }
+
 	.tel-list {
 		list-style: none;
 		margin: 20px 0;
@@ -13,6 +36,10 @@
 		font-size: 16px;
 		color: $gray-dark;
 		letter-spacing: 1px;
+	
+	    @media (max-width: 991px) {
+			font-size: 14px;
+	    }
 		
 		a {
 			color: $gray-dark;
@@ -42,6 +69,10 @@
 		color: $gray-dark;
 		letter-spacing: 1px;
 		
+	    @media (max-width: 991px) {
+			font-size: 14px;
+	    }
+
 		&::before {
 			content: '';
 			width: 26px;
@@ -66,6 +97,10 @@
 		color: $gray-dark;
 		letter-spacing: 1px;
 		
+	    @media (max-width: 991px) {
+			font-size: 14px;
+	    }
+
 		a {
 			color: $gray-dark;
 		}
@@ -90,7 +125,11 @@
 #map {
 	min-height: 500px;
     width: 100%;
-    // margin-bottom: 80px;
+
+    @media (max-width: 991px) {
+    	min-height: calc(70vh - 48px);
+    	max-height: 500px;
+    }
     
 	.map-control {
 		display: block;

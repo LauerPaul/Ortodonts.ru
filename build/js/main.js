@@ -1,32 +1,75 @@
 // If logStatus = true - console log all actions
-var logStatus = true,
-
+// application config
+var ac = { 
+	// ---------------
+	log_status: true,
+	data_js: true,
+	// ---------------
+	fixedColumn: true,
+	// ---------------
+	index: true,
+	about: true,
+	services: true,
+	portfolio: true,
+	faq: true,
+	blog: true,
+	contacs: true,
+	// ---------------
+},
+logStatus = true,
 // Application logic
 app = {
 	init: function(){
-		app.developer('load', 'app.init()', 'Загрузка основной функции.');
+		app.developer('load', 'app.init()', 'Загрузка основной функции.', '', 'success');
 		app.data_js();
 	},
-	developer: function(action, func, text, log_status = logStatus){
+	developer: function(action, func, text, log_status, type){
+		type = typeof(type) !== 'undefined' ? type : 'info';
+		if(typeof log_status == 'undefined') log_status = ac.log_status; 
 		// LOG DEVELOPER MODE
-		if(log_status){
+		// If log_status = true - console log all actions
+		if(log_status && logStatus){
 			var time_format = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds()
-			console.log('('+ time_format +') ' + action + ' - ' + func + ' - ' + text);
+			switch(type) {
+				case 'info':
+					console.log('%c💁 Info', "color: #3598db; font-weight: bold; font-size: 10px;");
+					console.group();
+						console.log('%c('+ time_format +') ' + action + ' - ' + func, "background: #3598db; color: white; padding: 3px 10px; font-size: 10px;");
+						console.info('%c'+text, "background: #666; color: white; padding: 3px 12px; padding-left: 10px; font-size: 11px;");
+						// console.trace();
+					console.groupEnd();
+					break;
+				case 'success':
+					console.log('%c👌 Success', "color: #5fbd5f; font-weight: bold; font-size: 10px;");
+					console.group();
+						console.log('%c('+ time_format +') ' + action + ' - ' + func, "background: #5fbd5f; color: white; padding: 3px 10px; font-size: 10px;");
+						console.info('%c'+text, "background: #666; color: white; padding: 3px 12px; padding-left: 10px; font-size: 11px;");
+						// console.trace();
+					console.groupEnd();
+					break;
+				case 'error':
+					console.log('%c⛔ ERROR!!!', "color: #c23f35; font-weight: bold; font-size: 10px;");
+					console.group();
+						console.log('%c('+ time_format +') ' + action + ' - ' + func, "background: #c23f35; color: white; padding: 3px 10px; font-size: 10px;");
+						console.warn('%c'+text, "background: #666; color: white; padding: 3px 12px; padding-left: 10px; font-size: 11px;");
+					console.groupEnd();
+					break;
+			}
 		}
 	},
 	data_js: function(){
-		app.developer('load', 'app.data_js()', 'Загрузка основной функции data-js-init.');
+		app.developer('load', 'app.data_js()', 'Загрузка основной функции data-js-init.', ac.data_js, 'success');
 		jQuery(document).ready(function($) {
 			// Data init js
 			if($(document).find('[data-js-init]').length > 0){
-				app.developer('init', 'app.data()', 'Инициализация data-js-init.');
+				app.developer('init', 'app.data()', 'Инициализация data-js-init.', ac.data_js, 'success');
 				for (var i = 0; i < $(document).find('[data-js-init]').length; i++) {
 					if (typeof(eval($($('[data-js-init]')[i]).attr('data-js-init')+'.init')) !== 'undefined') {
 						var this_ = $($('[data-js-init]')[i]);
 						eval($($('[data-js-init]')[i]).attr('data-js-init')).init(this_);
-						app.developer('init', 'app.data()', 'Инициализация data-js-init - '+$($('[data-js-init]')[i]).attr('data-js-init')+'.init()');
+						app.developer('init', 'app.data()', 'Инициализация data-js-init - '+$($('[data-js-init]')[i]).attr('data-js-init')+'.init()', ac.data_js);
 					}else{
-						app.developer('!!! ERROR !!!', 'app.data()', 'Инициализация - функция '+$($('[data-js-init]')[i]).attr('data-js-init')+'.init() не найдена.');
+						app.developer('!!! ERROR !!!', 'app.data()', 'Инициализация - функция '+$($('[data-js-init]')[i]).attr('data-js-init')+'.init() не найдена.', ac.data_js, 'error');
 					}
 				}
 			}
@@ -45,7 +88,6 @@ function global_function(obj, func = function(){}, call_back = false){
 		app.developer('load method Object', 'global_function() - .mouse_over', 'Вызов метода объекта.');
 		$(this_.obj).mouseover(function(event){
 			app.developer('mouseover', 'global_function()', 'Событие наведения курсора на объект.');
-			// if(logStatus) console.log(this);
 			func_(this);
 		});
 	};
@@ -53,18 +95,17 @@ function global_function(obj, func = function(){}, call_back = false){
 		app.developer('load method Object', 'global_function() - .mouse_out', 'Вызов метода объекта.');
 		$(this_.obj).mouseout(function(event){
 			app.developer('mouseout', 'global_function()', 'Событие ухода курсора из объекта.');
-			// if(logStatus) console.log(this);
 			func_(this);
 		});
 	};
 }
 /*___________-----------------------------------------------------------------------------_________________*/
-
-
-
 $(document).ready(function($) {
 	app.init();
 	$("img.lazy").lazyload();
+})
+.on('click', 'header .shawl-mobile', function(){
+	mobile.menu();
 });
 
 var wow = {
@@ -85,6 +126,25 @@ FeedBackButton = function(){
 			btnContact.removeClass('visible');
 		}
 	});
+},
+
+mobile = {
+	menu: function() {
+		var menu = $('#HSN'),
+			shawl = $('header .shawl-mobile'),
+			body = $('body');
+
+		if(menu.hasClass('open')){
+			menu.removeClass('open');
+			shawl.removeClass('open');
+			body.css('overflow', 'auto');
+		}
+		else {
+			menu.addClass('open');
+			shawl.addClass('open');
+			body.css('overflow', 'hidden');
+		}
+	}
 },
 
 indexPage = {
@@ -263,30 +323,52 @@ AboutPage = {
 
 BlogPage = {
 	init: function(){
-		app.developer('load', 'BlogPage.init()', 'Вызов функции.');
+		app.developer('load', 'BlogPage.init()', 'Инициализация функции.');
 		// Search blog focus
 		$(document).on('click','.search-case',function(){
-			if(!$(this).hasClass('open')){searchFousBlog()}
+			if(!$(this).hasClass('open')){searchFousBlog('open')}
+			app.developer('click', 'BlogPage.init()', 'Click .search-case.', ac.blog);
 		})
 		// Search blog focusout
-		.on('blur','.search-case input[type="text"]',function(){
-			if($(this).val() == '' || $(this).val() == ' '){searchFousBlog()}
+		.on('blur','.search-case input[type="text"]', function(){
+			if($(this).val() == '' || $(this).val() == ' '){searchFousBlog('close')}
+			app.developer('blur', 'BlogPage.init()', 'Focus out .search-case input[type="text"].', ac.blog);
 		})
 		// Current open
 		.on('click','.filters-case',function(){
-			$(this).addClass('open')
+			$(this).addClass('open');
+			app.developer('click', 'BlogPage.init()', 'Click .filters-case.', ac.blog);
 		})
 		// Current hide
-		.on('click',function(e){
+		.on('click', function(e){
 			var current_ = $('.filters-case');
 			if (current_.has(e.target).length === 0){current_.removeClass('open');}
+		})
+		// Category menu fixed
+		.scroll(function(){
+			if($(window).width() > 991){
+				fixedColumn('.column-right','.category-list-blog');
+				$('.filters-case').removeClass('open');
+			}
+		})
+		// Top line fixed mobile
+		.scroll(function(){
+			if($(window).width() < 992){
+				fixedColumn('.column-right','.top-line', 46);
+			}
 		});
-		$(document).scroll(function(){fixedColumn('.column-right','.category-list-blog');});
 
-		function searchFousBlog(){
+		function searchFousBlog(method){
 			var case_ = $('.search-case');
-			if(case_.hasClass('open')){case_.removeClass('open')}
-			else {case_.addClass('open').find('input').focus()}
+				method = typeof(method) == 'undefined' ? false : method;
+
+			if(method == 'open'){
+				case_.addClass('open').find('input').focus();
+			}
+			else if(method == 'close'){
+				case_.removeClass('open');
+			}
+			app.developer('function', 'BlogPage.init()', 'searchFousBlog()', ac.blog);
 		}
 	}
 },
@@ -402,9 +484,11 @@ ContactsPage = {
 },
 
 
-fixedColumn = function(a,b){
-	app.developer('action scroll', 'fixedColumn()', 'Фиксированное меню');
-	var pageH = $(document).outerHeight(),
+fixedColumn = function(a,b,c,d){
+	app.developer('action scroll', 'fixedColumn()', 'Фиксированное меню', ac.fixedColumn);
+	var c = typeof(c) == 'undefined' ? 0 : c,
+		d = typeof(d) == 'undefined' ? 0 : d,
+		pageH = $(document).outerHeight(),
 		Lb = $(a), // column 1
 		LbH = Lb.outerHeight(),
 		LbT = Lb.offset().top,
@@ -413,10 +497,9 @@ fixedColumn = function(a,b){
 		result = pageH - (LbH + LbT),
 		maxBottom = pageH - LbT - (result + fixedH),
 		offset = $(document).scrollTop();
-		value_ = offset <= LbT ? 0 : (offset - LbT < maxBottom ? offset - LbT : maxBottom);
-		fixed.css({
-			'top' : value_
-		});
+		value_ = offset <= LbT ? 0 : (offset - LbT < maxBottom ? offset - LbT + c : maxBottom - d);
+		fixed.css({'top' : value_});
+		if(!value_) {fixed.removeClass('scrollInit')} else {fixed.addClass('scrollInit')}
 },
 
 /*FAQ PAGE*/

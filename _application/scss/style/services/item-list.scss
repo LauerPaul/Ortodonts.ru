@@ -16,11 +16,23 @@
 		}
 
 		.image-item-wrapper {
-			
+
+			img {
+				max-width: 100%;
+				max-height: 100%;
+			}
 		}
 
 		.text-item-wrapper {
 			padding: 80px;
+
+			@media (max-width: 1229px) {
+			   padding: 50px 55px;
+			}
+
+			@media (max-width: 991px) {
+
+			}
 			
 			.title-item {
 				color: rgba(0,0,0,.7);

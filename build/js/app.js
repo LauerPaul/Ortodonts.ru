@@ -1,17 +1,46 @@
 // If logStatus = true - console log all actions
-var logStatus = true,
-
+var app_config = {
+	log_status: true,
+},
+logStatus = true,
 // Application logic
 app = {
 	init: function(){
 		app.developer('load', 'app.init()', 'Загрузка основной функции.');
 		app.data_js();
 	},
-	developer: function(action, func, text, log_status = logStatus){
+	developer: function(action, func, text, log_status, type){
+		type = typeof(type) !== 'undefined' ? type : 'info';
+		if(typeof log_status == 'undefined') log_status = app_config.log_status; 
 		// LOG DEVELOPER MODE
-		if(log_status){
+		// If log_status = true - console log all actions
+		if(log_status && logStatus){
 			var time_format = new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds()
-			console.log('('+ time_format +') ' + action + ' - ' + func + ' - ' + text);
+			switch(type) {
+				case 'info':
+					console.log('%c💁 Info', "color: #3598db; font-weight: bold; font-size: 10px;");
+					console.group();
+						console.log('%c('+ time_format +') ' + action + ' - ' + func, "background: #3598db; color: white; padding: 3px 10px; font-size: 10px;");
+						console.info('%c'+text, "background: #666; color: white; padding: 3px 12px; padding-left: 10px; font-size: 11px;");
+						// console.trace();
+					console.groupEnd();
+					break;
+				case 'success':
+					console.log('%c👌 Success', "color: #5fbd5f; font-weight: bold; font-size: 10px;");
+					console.group();
+						console.log('%c('+ time_format +') ' + action + ' - ' + func, "background: #5fbd5f; color: white; padding: 3px 10px; font-size: 10px;");
+						console.info('%c'+text, "background: #666; color: white; padding: 3px 12px; padding-left: 10px; font-size: 11px;");
+						// console.trace();
+					console.groupEnd();
+					break;
+				case 'error':
+					console.log('%c⛔ ERROR!!!', "color: #c23f35; font-weight: bold; font-size: 10px;");
+					console.group();
+						console.log('%c('+ time_format +') ' + action + ' - ' + func, "background: #c23f35; color: white; padding: 3px 10px; font-size: 10px;");
+						console.warn('%c'+text, "background: #666; color: white; padding: 3px 12px; padding-left: 10px; font-size: 11px;");
+					console.groupEnd();
+					break;
+			}
 		}
 	},
 	data_js: function(){

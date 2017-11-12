@@ -5,11 +5,15 @@ section.feedback-section {
 	}
 
 	h1, h2, h3, h4 {
-		margin-bottom: 50px;
+		margin-bottom: 35px;
 	}
 
 	#feedback {
 		margin-bottom: 0px;
+
+		// @media (min-width: 768px) {
+
+		// }
 
         @media (max-width: 991px) {
 			margin: 0px 25px 0;
@@ -24,7 +28,7 @@ section.feedback-section {
 		}
 		
 		button[type="submit"] {
-			margin-top: 40px;
+			margin-top: 25px;
 			cursor: pointer;
 			@include transition(all 0.2s);
 
