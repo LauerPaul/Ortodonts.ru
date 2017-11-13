@@ -1,0 +1,26 @@
+-var active_menu = '';
+
+html(lang='ru')
+	include include/common/head
+	body(data-js-init="wow")
+		include include/common/header
+		
+		section.error-page.text-center
+		
+			.container
+				.row
+					.col-md-12
+						
+						h1.error-404 404
+						p.description.
+							Такой страницы не существует!
+
+						p.description-mini.
+							Но! У нас есть другие сраницы!
+
+						a.btn.btn-primary.hvr-grow-shadow(href="/") На главную
+
+						.image
+
+		include include/common/footer
+
