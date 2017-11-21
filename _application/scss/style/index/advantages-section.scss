@@ -30,7 +30,16 @@ section.advantages-section-index {
 		margin: 0 auto;
 
 	    @media (max-width: 767px) {
-			margin-bottom: 50px;
+			margin-bottom: 30px;
+			width: 170px;
+
+			&.f-l {
+				float: left;
+			}
+
+			&.f-r {
+				float: right;
+			}
 		}
 
 		.advantage-icon {
@@ -47,6 +56,9 @@ section.advantages-section-index {
 				width: 96px;
 				height: 96px;
 			}
+		    @media (max-width: 767px) {
+		    	margin-bottom: 15px;
+		    }
 
 		}
 

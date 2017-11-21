@@ -26,9 +26,7 @@ section.about-section-index {
 		margin-top: 10px;
 
 		.item-about-advantages {
-        	@media (min-width: 992px) {
 				margin-top: 25px;
-			}
 
 			.icon-item-about-advantages {
 				float: left;
@@ -56,6 +54,12 @@ section.about-section-index {
 				width: 260px;
 				display: inline-block;
 				letter-spacing: 0.1px;
+				font-family: "UbuntuMedium";
+				color: rgba(0,0,0,.54);
+
+			    @media (max-width: 767px) {
+			    	width: 200px;
+			    }
 
 				@media (max-width: 360px) {
 					width: 200px;
@@ -83,7 +87,11 @@ section.about-section-index {
 		@media (max-width: 767px) {
 			display: block;
 		    height: 300px;
-		    margin: 50px auto 0;
+		}
+		@media (max-width: 500px) {
+			max-height: 300px;
+    		max-width: 100%;
+    		height: auto;
 		}
 	}
 }

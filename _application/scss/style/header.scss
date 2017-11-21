@@ -122,9 +122,9 @@ header {
     		@media (min-width: 992px) and (max-width: 1229px) {
 				width: 170px;
 			}
-    		@media (max-width: 576px) {
-			    margin-top: 10px;
-				width: 150px;
+		    @media (max-width: 767px) {
+				max-width: 150px;
+				padding-top: 10px;
     		}
 		}
 		> img.scroll {

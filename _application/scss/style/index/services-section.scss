@@ -20,6 +20,9 @@ section.services-section-index {
 		.item-group {
 		    margin: 0 -2px;
 			max-width: 50%;
+	        @media (max-width: 991px) {
+	        	max-width: 100%;
+	        }
 
 			@media (max-width: 1229px) {
 				width: 100%;
@@ -117,7 +120,7 @@ section.services-section-index {
 
     		@media (min-width: 768px) {
 				padding: 0px 15px;
-				font-size: 14px;
+				font-size: 12px;
     		}
 
     		@media (max-width: 767px) {

@@ -32,37 +32,52 @@ a.btn:hover {
     	font-size: 16px;
     	padding: 12px 20px;
 	}
-	@media (max-width: 992px) {
-		width: 280px;
-    	height: auto;
-    	font-size: 16px;
-    	padding: 10px 20px;
-	}
-	@media (max-width: 769px) {
+	
+    @media (max-width: 991px) {
 		width: 240px;
-    	height: auto;
-    	font-size: 14px;
-    	padding: 10px 20px;
-	}
-	@media (max-width: 577px) {
-		width: 200px;
-    	height: auto;
-    	font-size: 12px;
-    	padding: 10px 20px;
-	}
+        height: auto;
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+
+    @media (max-width: 767px) {
+        letter-spacing: 2px;
+        width: 220px;
+    }
+
+    @media (max-width: 577px) {
+        width: 200px;
+        height: auto;
+        font-size: 12px;
+        padding: 10px 20px;
+    }
 }
 
 .title-description {
     margin-bottom: 50px;
     font-size: 18px;
     color: rgba(0,0,0,.54);
+
+    @media (max-width: 767px) {
+        font-size: 14px;
+        margin-bottom: 35px;
+    }
+    @media (max-width: 500px) {
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
 }
 
 section.section-p-80 {
     padding: 94px 0;
 
+    @media (max-width: 991px) {
+        padding: 70px 0;
+    }
     @media (max-width: 767px) {
-        padding: 74px 0;
+        padding: 60px 0;
     }
 
     @media (max-width: 539px) {
@@ -83,7 +98,7 @@ h1, h2 {
 
     @media (max-width: 991px) {
         margin-bottom: 40px;
-        font-size: 36px;
+        font-size: 32px;
     }
 
     @media (max-width: 767px) {
@@ -95,6 +110,11 @@ h1, h2 {
         margin-bottom: 26px;
         text-transform: uppercase;
         font-size: 40px;
+
+        @media (max-width: 767px) {
+            font-size: 32px;
+            margin-bottom: 24px;
+        }
     }
 }
 
@@ -133,7 +153,7 @@ h1, h2 {
 
     @media (max-width: 767px) {
         font-size: 14px;
-        padding: 10px 15px;
+        padding: 12px 15px;
     }
 
 }
