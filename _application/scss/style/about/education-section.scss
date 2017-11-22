@@ -1,9 +1,22 @@
 /* EDUCATION */
 section.education-section {
+	
+	@media (max-width: 500px) {
+		padding-left: 10px !important;
+		padding-right: 10px !important;
+	}
+
 	ul {
 		padding-left: 25px;
 		max-width: 980px;
 		margin: 0 auto;
+	    max-height: 400px;
+	    overflow: hidden;
+	    @include transition(all 0.4s);
+	    
+	    &.full {
+	    	max-height: none;
+	    }
 
 		li {
 			margin-bottom: 40px;
@@ -45,5 +58,14 @@ section.education-section {
 	span.text {
 		display: inline-block;
 		width: calc(100% - 49px - 20px);
+	}
+
+	.btn-wrapper {
+		padding-top: 50px;
+		text-align: center;
+		
+		button {
+			margin: 0 auto;
+		}
 	}
 }

@@ -10,7 +10,7 @@
 	    margin: 0;
 	    left: 0;
 	    padding: 0px 40px;
-	    height: 40px;
+	    height: 45px;
 
 	    &::after {
 		    content: "";
@@ -32,6 +32,12 @@
 	        top: 100%;
 		}
 
+		.search-case {
+			&.open {
+				top: 0px;
+			}
+		}
+		
 		.filters-case {
 			.current {
 				.filters-list{
@@ -214,6 +220,7 @@
 		}
 		input[name="search"] {
 			display: none;
+			background: $white;
 		}
 
 		&.open {
@@ -224,7 +231,7 @@
 				position: absolute;
 				left: 0;
 				height: 45px;
-				top: 0;
+				top: -5px;
 		    }
 
 			.wrapper-hide {

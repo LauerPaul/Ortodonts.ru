@@ -1,7 +1,7 @@
-.services-menu-wrapper
+.services-menu-wrapper(data-js-init="servicesPage")
 	.container
 		.row
-			.d-flex.justify-content-around
+			.d-flex.justify-content-around.desktop
 				.container-fluid
 					ul.list-inline.category-menu-services
 						li.active
@@ -16,3 +16,17 @@
 						li
 							a(href="#").d-flex.align-items-center.justify-content-center
 								span Обучение гигиене полости рта
+			.col-12.mobile
+				.top-line
+					.filters-case
+						.current 
+							span Другие категории
+							i.arrow-list
+							ul.list-group.filters-list
+								li.list-group-item
+									a(href="#") Ортодонтия
+								li.list-group-item 
+									a(href="#") Эстетическая стоматология
+								li.list-group-item 
+									a(href="#") Обучение гигиене полости рта
+					.current-menu Терапия

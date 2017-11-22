@@ -1,10 +1,44 @@
 /* CATEGORY MENU */
 .portfolio-menu-wrapper {
-	margin-top: 40px;
-	margin-bottom: 40px;
+	@media (min-width: 768px) {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
 
 	.wrap {
 		width: 100%;
+	}
+
+	@media (min-width: 576px) {
+		.top-line {
+			display: none;
+		}
+	}
+	@media (max-width: 575px) {
+		.desktop {
+			display: none !important;
+		}
+		.mobile {
+			height: 60px;
+			margin-bottom: 40px;
+		
+			.top-line {
+				width: 100%;
+			    max-width: calc(100% - 20px);
+			    
+			  	.filters-case .current .filters-list {
+			  		left: 10px;
+			  		right: auto;
+			  	}
+
+			  	.current-menu {
+					float: right;
+					font-family: "UbuntuMedium";
+					padding-right: 10px;
+					color: $blue;
+				}
+			}
+		}
 	}
 }
 

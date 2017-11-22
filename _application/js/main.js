@@ -223,13 +223,7 @@ AboutPage = {
 		};
 		
 		FeedBackButton();
-		// AboutPage.wrapSlide();
 		AboutPage.slick('.wrapper-slide');
-	
-		// $(window).resize(function(event) {
-		// 	AboutPage.wrapSlide();
-		// 	$('.wrapper-slide').css('margin-left', 0);
-		// });
 	},
 	slick: function(obj){
 		$(obj).slick({
@@ -237,24 +231,30 @@ AboutPage = {
 		  centerPadding: '30px',
 		  slidesToShow: 3,
           arrows: true,
-          nextArrow: '<div class="right-arrow arrow-item"><i class="fa fa-long-arrow-right"></i></div>',
+          nextArrow: '<a class="right-arrow arrow-item"><i class="fa fa-long-arrow-right"></i></a>',
+          prevArrow: '<a class="left-arrow arrow-item"><i class="fa fa-long-arrow-left"></i></a>',
+		  lazyLoad: 'ondemand',
 		  responsive: [
 		    {
 		      breakpoint: 768,
 		      settings: {
-		        arrows: false,
+	            nextArrow: '<a class="right-arrow arrow-item"><i class="fa fa-long-arrow-right"></i></a>',
+	            prevArrow: '<a class="left-arrow arrow-item"><i class="fa fa-long-arrow-left"></i></a>',
 		        centerMode: true,
 		        centerPadding: '40px',
-		        slidesToShow: 1
+		        slidesToShow: 1,
+		        lazyLoad: 'ondemand',
 		      }
 		    },
 		    {
 		      breakpoint: 480,
 		      settings: {
-		        arrows: false,
+	            nextArrow: '<a class="right-arrow arrow-item"><i class="fa fa-long-arrow-right"></i></a>',
+	            prevArrow: '<a class="left-arrow arrow-item"><i class="fa fa-long-arrow-left"></i></a>',
 		        centerMode: true,
 		        centerPadding: '40px',
-		        slidesToShow: 1
+		        slidesToShow: 1,
+		        lazyLoad: 'ondemand',
 		      }
 		    }
 		  ]
@@ -320,7 +320,21 @@ AboutPage = {
 
 	}
 },
-
+servicesPage = {
+	init: function(){
+		$(document)
+		// Current open
+		.on('click','.filters-case',function(){
+			$(this).addClass('open');
+			app.developer('click', 'BlogPage.init()', 'Click .filters-case.', ac.blog);
+		})
+		// Current hide
+		.on('click', function(e){
+			var current_ = $('.filters-case');
+			if (current_.has(e.target).length === 0){current_.removeClass('open');}
+		})
+	}
+},
 BlogPage = {
 	init: function(){
 		app.developer('load', 'BlogPage.init()', 'Инициализация функции.');
