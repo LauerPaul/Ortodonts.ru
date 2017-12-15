@@ -6,7 +6,7 @@ section.education-section.section-p-80
 				h2.text-center Образование
 
 			.col-md-12
-				ul
+				ul.education-list
 					li.clearfix
 						span.date 2005 г.
 						span.text
@@ -115,4 +115,7 @@ section.education-section.section-p-80
 						span.date 2017 г.
 						span.text
 							|Учебный курс "Использование Ботокса в ортодонтической практике"
+
+			.col-md-12.btn-wrapper
+				button.btn.btn-primary.hvr-grow-shadow(type="button", onclick="$(this).remove();$('.education-list').addClass('full')") Показать больше
 // *Education* 

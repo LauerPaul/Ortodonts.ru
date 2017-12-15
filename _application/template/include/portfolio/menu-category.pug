@@ -1,9 +1,9 @@
-.portfolio-menu-wrapper
+.portfolio-menu-wrapper(data-js-init="servicesPage")
 	.container
 		.row
-			.d-flex.justify-content-between.wrap
+			.d-flex.justify-content-between.wrap.desktop
 				.container-fluid
-					ul.list-inline.category-menu-portfolio
+					ul.list-inline.category-menu-services
 						li.active
 							a(href="#").d-flex.align-items-center.justify-content-center
 								span Ортодонтия
@@ -13,3 +13,15 @@
 						li
 							a(href="#").d-flex.align-items-center.justify-content-center
 								span Эстетическая стоматология
+			.col-12.mobile
+				.top-line
+					.filters-case
+						.current 
+							span Другие категории
+							i.arrow-list
+							ul.list-group.filters-list
+								li.list-group-item
+									a(href="#") Ортодонтия
+								li.list-group-item 
+									a(href="#") Эстетическая стоматология
+					.current-menu Терапия

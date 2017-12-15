@@ -2,18 +2,7 @@
 section.advantages-section-index {
     z-index: 1;
     position: relative;
-    background: url(../../images/bg/bg_advantages_index.jpg) no-repeat center;
-    height: 680px;
-
-    &::after {
-	    content: '';
-	    position: absolute;
-	    top: 0;
-	    bottom: 0;
-	    left: 0;
-	    right: 0;
-	    background: rgba(3, 21, 56, 0.76);
-	}
+    background: #f7f7f7;
 
 	> .container {
 		z-index: 1;
@@ -41,11 +30,20 @@ section.advantages-section-index {
 		margin: 0 auto;
 
 	    @media (max-width: 767px) {
-			margin-bottom: 50px;
+			margin-bottom: 30px;
+			width: 170px;
+
+			&.f-l {
+				float: left;
+			}
+
+			&.f-r {
+				float: right;
+			}
 		}
 
 		.advantage-icon {
-			margin: 0 auto 35px;
+			margin: 0 auto 28px;
 			border: 2px solid $blue;
 			border-radius: 50%;
 
@@ -58,6 +56,9 @@ section.advantages-section-index {
 				width: 96px;
 				height: 96px;
 			}
+		    @media (max-width: 767px) {
+		    	margin-bottom: 15px;
+		    }
 
 		}
 

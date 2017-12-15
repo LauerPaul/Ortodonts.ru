@@ -73,16 +73,29 @@
       </div>
     </section>
     <!-- *Top Section*-->
-    <div class="portfolio-menu-wrapper">
+    <div class="portfolio-menu-wrapper" data-js-init="servicesPage">
       <div class="container">
         <div class="row">
-          <div class="d-flex justify-content-between wrap">
+          <div class="d-flex justify-content-between wrap desktop">
             <div class="container-fluid">
-              <ul class="list-inline category-menu-portfolio">
+              <ul class="list-inline category-menu-services">
                 <li class="active"><a class="d-flex align-items-center justify-content-center" href="#"><span>Ортодонтия</span></a></li>
                 <li><a class="d-flex align-items-center justify-content-center" href="#"><span>Терапия</span></a></li>
                 <li><a class="d-flex align-items-center justify-content-center" href="#"><span>Эстетическая стоматология</span></a></li>
               </ul>
+            </div>
+          </div>
+          <div class="col-12 mobile">
+            <div class="top-line">
+              <div class="filters-case">
+                <div class="current"> <span>Другие категории</span><i class="arrow-list"></i>
+                  <ul class="list-group filters-list">
+                    <li class="list-group-item"><a href="#">Ортодонтия</a></li>
+                    <li class="list-group-item"> <a href="#">Эстетическая стоматология</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="current-menu">Терапия</div>
             </div>
           </div>
         </div>
@@ -133,14 +146,12 @@
     <section class="faq-section-index">
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
-            <h2 class="text-center">Часто задаваемые вопросы </h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="btn-wrapper"><a class="btn btn-primary hvr-grow-shadow" href="#">читать дальше</a></div>
+          <div class="col-md-6 col-sm-7">
+            <div class="wrapper d-flex justify-content-end align-items-center flex-wrap align-content-center">
+              <h2>Часто<br>задаваемые<br>вопросы </h2>
+              <p>Брекеты портят эмаль зубов и после них образуется кариес?</p>
+              <div class="btn-wrapper"><a class="btn btn-primary hvr-grow-shadow" href="#">читать ответ</a></div>
+            </div>
           </div>
         </div>
       </div>
@@ -151,29 +162,34 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="text-center">Записаться на прием</h2>
+            <h2 class="text-center with-description">Записаться на прием</h2>
+            <div class="title-description text-center">
+              Оставьте свои данные, чтобы записаться на прием<br>
+              и мы Вам перезвоним для уточнения деталей.
+              
+            </div>
           </div>
         </div>
         <form action="#" id="feedback">
           <div class="row">
-            <div class="col-md-6 col-sm-6">
+            <div class="col-md-6 col-sm-12">
               <div class="input-group">
                 <input class="form-control" name="first_name" placeholder="Имя" type="text"/>
               </div>
             </div>
-            <div class="col-md-6 col-sm-6">
+            <div class="col-md-6 col-sm-12">
               <div class="input-group">
                 <input class="form-control" name="last_name" placeholder="Фамилия" type="text"/>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6 col-sm-6">
+            <div class="col-md-6 col-sm-12">
               <div class="input-group">
                 <input class="form-control" name="mail" placeholder="E-mail" type="mail"/>
               </div>
             </div>
-            <div class="col-md-6 col-sm-6">
+            <div class="col-md-6 col-sm-12">
               <div class="input-group">
                 <input class="form-control" name="tel" placeholder="Телефон" type="tel"/>
               </div>

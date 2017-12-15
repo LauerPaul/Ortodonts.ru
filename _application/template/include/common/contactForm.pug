@@ -3,21 +3,24 @@ section.section-p-80.feedback-section
 	.container
 		.row
 			.col-md-12
-				h2.text-center Записаться на прием
+				h2.text-center.with-description Записаться на прием
+				.title-description.text-center.
+					Оставьте свои данные, чтобы записаться на прием<br>
+					и мы Вам перезвоним для уточнения деталей.
 
 		form(action="#")#feedback
 			.row
-				.col-md-6.col-sm-6
+				.col-md-6.col-sm-12
 					.input-group
 						input.form-control(name="first_name", placeholder="Имя", type="text")
-				.col-md-6.col-sm-6
+				.col-md-6.col-sm-12
 					.input-group
 						input.form-control(name="last_name", placeholder="Фамилия", type="text")
 			.row
-				.col-md-6.col-sm-6
+				.col-md-6.col-sm-12
 					.input-group
 						input.form-control(name="mail", placeholder="E-mail", type="mail")
-				.col-md-6.col-sm-6
+				.col-md-6.col-sm-12
 					.input-group
 						input.form-control(name="tel", placeholder="Телефон", type="tel")
 			.row

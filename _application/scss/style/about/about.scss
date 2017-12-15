@@ -1,7 +1,5 @@
 /* ABOUT */
 .ortodont_about_text {
-	padding-bottom: 0px !important;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
 	h3, h4 {
 		color: $blue;
@@ -13,12 +11,9 @@
     	}
 	}
 
-	p {
-		margin-bottom: 80px;
-    	
-    	@media (max-width: 991px) {
-    		margin-bottom: 40px;
-    	}
+	@media (max-width: 500px) {
+		padding-left: 10px !important;
+		padding-right: 10px !important;
 	}
 	
 }

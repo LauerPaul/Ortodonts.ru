@@ -1,15 +1,40 @@
 /* FAQ */
 .faq-section-index {
-	background: url(../../images/bg/index_faq.jpg) no-repeat center;
+	background: url(../../images/bg/index_faq_nadezhda.jpg) no-repeat center;
     background-size: cover;
     position: relative;
 	color: $white;
-
-    @media (min-width: 992px) {
-		padding: 120px 0;
+	max-height: 535px;
+	overflow: hidden;
+	
+    @media (max-width: 575px) {
+		.container {
+			padding: 0px;
+		}
     }
-    @media (max-width: 991px) {
-		padding: 60px 0;
+
+	.wrapper {
+	    width: 100%;
+	    max-width: 600px;
+	    height: 100%;
+	    max-height: 535px;
+	    background: rgba(68,121,224,.5);
+	    padding: 35px 65px;
+	    text-align: right;
+
+        @media (max-width: 991px) {
+			height: auto;
+		    padding: 30px 45px;
+	    }
+        @media (max-width: 767px) {
+			padding: 30px 15px;
+        }
+
+	    @media (min-width: 992px) and (max-width: 1229px) {
+	    	height: auto;
+	    	max-height: auto;
+	    }
+
 	}
 
 	&::before {
@@ -20,16 +45,27 @@
 
     h1, h2, h3, h4 {
 		color: $white;
-		text-align: left !important;
 		width: 720px;
 		margin: 0 auto;
-		margin-bottom: 50px;
+	    text-align: right !important;
+		margin-bottom: 48px;
+		letter-spacing: 0.5px;
+		line-height: 56px;
+		text-transform: uppercase;
+
+	    @media (max-width: 991px) {
+	    	line-height: 42px;
+	    	margin-bottom: 26px;
+	    }
 
 		@media (max-width: 780px) {
 			width: 100%;
 			padding-left: 20px;
 			padding-right: 30px;
     	}
+		@media (max-width: 575px) {
+		    text-align: left !important;
+		}
         @media (max-width: 500px) {
 			font-size: 26px;
 			margin-bottom: 30px;
@@ -39,55 +75,53 @@
     .btn-wrapper {
 		width: 720px;
 		margin: 0 auto;
-		margin-top: 50px;
+		margin-top: 35px;
+		@include clamp(4, 110px);
 
 		@media (max-width: 780px) {
 			width: 100%;
 			padding-left: 20px;
 			padding-right: 30px;
     	}
+		@media (max-width: 575px) {
+			.btn-primary {
+				float: right;
+			}
+		}
     	@media (max-width: 500px) {
 			margin-top: 30px;
     	}
     }
 
 	p {
-		text-align: left !important;
+	    text-align: right;
 		width: 720px;
 		margin: 0 auto;
 		margin: 0 auto;
 	    letter-spacing: 0.5px;
-	    padding-left: 30px;
 	    position: relative;
     	font-size: 18px;
+
+	    @media (max-width: 991px) {
+    		font-size: 14px;
+	    }
 
         @media (max-width: 780px) {
 			width: 100%;
 			padding-left: 40px;
 			padding-right: 30px;
+			font-size: 14px;
     	}
-
-	    &::before {
-	    	content: '';
-	    	position: absolute;
-	    	height: calc(100% - 12px);
-	    	width: 6px;
-	    	background: $white;
-	    	left: 0;
-	    	top: 8px;
-
-        	@media (max-width: 780px) {
-				left: 20px;
-        	}
-	    }
+		@media (max-width: 575px) {
+		    text-align: left;
+	        width: 100%;
+    		padding-left: 20px;
+    		padding-right: 120px;
+    		font-size: 14px;
+		}
 
         @media (max-width: 960px) and (min-width: 781px) {
-			padding-right: 50px;
 			font-size: 16px;
         }
-        @media (max-width: 780px) {
-			padding-right: 30px;
-			font-size: 14px;
-		}
 	}
 }

@@ -1,8 +1,40 @@
 /* CATEGORY MENU */
 .services-menu-wrapper {
-	// background: $blue;
-	margin-top: 40px;
-	margin-bottom: 40px;
+	@media (min-width: 768px) {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+	@media (min-width: 576px) {
+		.top-line {
+			display: none;
+		}
+	}
+	@media (max-width: 575px) {
+		.desktop {
+			display: none !important;
+		}
+		.mobile {
+			height: 60px;
+			margin-bottom: 40px;
+		
+			.top-line {
+				width: 100%;
+			    max-width: calc(100% - 20px);
+			    
+			  	.filters-case .current .filters-list {
+			  		left: 10px;
+			  		right: auto;
+			  	}
+
+			  	.current-menu {
+					float: right;
+					font-family: "UbuntuMedium";
+					padding-right: 10px;
+					color: $blue;
+				}
+			}
+		}
+	}
 }
 
 .category-menu-services {
@@ -16,9 +48,15 @@
 		margin: 30px 10px 0px;
 		line-height: 18px;
 
+		@media (max-width: 1229px) {
+			width: 222px
+		}
 		@media (max-width: 991px) {
 			width: 160px;
-		}		
+		}
+		@media (max-width: 767px) {
+			width: 115px;
+		}
 
 		&:first-child {
 			margin-left: 0px;
@@ -39,11 +77,16 @@
     		height: 100%;
     		position: relative;
 			
+
+			@media (max-width: 1229px) {
+				font-size: 16px;
+			}
 			@media (max-width: 991px) {
 				font-size: 15px;
 			}
     		
     		@media (max-width: 767px){
+    			font-size: 14px;
     		}
     		
     		span {
