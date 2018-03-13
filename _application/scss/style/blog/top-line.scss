@@ -11,12 +11,13 @@
 	    left: 0;
 	    padding: 0px 40px;
 	    height: 45px;
+	    padding-top: 15px;
 
 	    &::after {
 		    content: "";
 		    border: 5px solid transparent;
-		    border-top: 5px solid rgba(0,0,0,.08);
-		    border-right: 5px solid rgba(0,0,0,.08);
+		    border-top: 5px solid rgba(0,0,0,0.21);
+		    border-right: 5px solid rgba(0,0,0,0.20);
 		    left: 0;
 	        top: 100%;
 		    position: absolute;
@@ -25,8 +26,8 @@
 	    &::before {
 		    content: "";
 		    border: 5px solid transparent;
-		    border-top: 5px solid rgba(0,0,0,.08);
-		    border-left: 5px solid rgba(0,0,0,.08);
+		    border-top: 5px solid rgba(0,0,0,0.21);
+		    border-left: 5px solid rgba(0,0,0,0.20);
 		    right: 0;
 		    position: absolute;
 	        top: 100%;
@@ -57,7 +58,10 @@
 	    background: white;
 	    max-width: calc(100% - 100px);
 	    top: 0;
-	    @include transition(top 0.4s);
+
+	    &.scrollInit {
+		    @include box-shadow(0px 2px 3px -1px rgba(0,0,0,0.35));
+		}
 
 	    .pull-right.d-flex.align-items-center.justify-content-end {
 	    	width: 100%;
@@ -193,6 +197,14 @@
 	    @media (max-width: 991px) {
 			margin-left: 0px;
 	    }
+
+		.faa-spin {
+			display: none;
+		}
+
+		.fa-times {
+			display: none;
+		}
 		
 		.wrapper-hide {
 			width: 100%;
@@ -204,7 +216,7 @@
 			
 			.search-icon {
 				margin-right: 10px;
-				width: 13px;
+				width: 12px;
 				height: 13px;
 				display: inline-block;
 				background: url(../../images/icon/search.png) no-repeat left top;
@@ -245,9 +257,12 @@
 				width: 100%;
 				font-size: 14px;
 				text-align: left;
-				padding-left: 43px;	
+				padding-left: 43px;
+			    padding-bottom: 0px;
+			    padding-top: 2px;
 
 			    @media (max-width: 551px) {
+			    	padding-top: 15px;
 			    }
 
 			}
@@ -263,6 +278,46 @@
 				bottom: -50%;
 				margin: auto;
 				background: $white url(../../images/icon/search.png) no-repeat right; 
+			}
+
+			&.loading {
+				&::before {
+					display: none;
+				}
+				.faa-spin {
+					display: inline-block;
+					position: absolute;
+				    top: -50%;
+				    bottom: -50%;
+				    height: 10px;
+				    margin: auto;
+				    left: 15px;
+				    font-size: 14px;
+				    color: $blue;
+			        line-height: 10px;
+				}
+			}
+			&.edit {
+				.faa-spin, &::before {
+					display: none;
+				}
+
+				.fa-times {
+					display: inline-block;
+					position: absolute;
+				    top: -50%;
+				    bottom: -50%;
+				    height: 10px;
+				    margin: auto;
+				    left: 15px;
+				    font-size: 13px;
+			        line-height: 12px;
+			        cursor: pointer;
+					
+					&:hover {
+				    	color: $blue;
+					}
+				}
 			}
 		}
 	}

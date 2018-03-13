@@ -60,22 +60,32 @@ header {
 			.mobile-footer-menu {
 				display: block;
 
-				@media (max-height: 345px) {
-					display: none;
+				@media (max-height: 330px) {
+					// display: none;
+				    .contacts-footer {
+				    	display: none !important;	
+				    }
 				}
 
-				footer {
+				.footer {
 					position: absolute;
 					bottom: 0;
 					box-shadow: none;
 					padding-bottom: 20px;
 					width: 100%;
+				    padding-left: 10px;
+				    padding-right: 10px;
+
 
 					.social {
 						margin: 0 12px 24px;
 
-						@media (max-height: 435px) {
+						@media (min-height: 331px) and (max-height: 365px) {
 							display: none !important;
+						}
+
+						@media (max-height: 330px) {
+							margin-bottom: 0px !important;
 						}
 						
 					}
@@ -104,6 +114,12 @@ header {
 			right: 15px;
 			top: 10px;
 			z-index: 1;
+			outline: none;
+			color: $blue;
+
+			&:focus, &:hover {
+				outline: none;
+			}
 		}
 
 	    @media (max-width: 991px) {

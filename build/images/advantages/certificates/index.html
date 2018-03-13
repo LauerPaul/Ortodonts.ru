@@ -1,0 +1,58 @@
+<div class="row">
+	<div class="col-md-7">
+		<!-- /---------- SECTION WORDS ----------/-->
+		<section>
+			<div class="section-head">
+				<div class="top-line">
+					<div class="filters-wrap pull-right">
+						<a class="sort-grup-icon" data-name="title" data-sort="desc" data-url="/ajax/admin/carousel/sort/" data-action-click="filterSort" data-toggle="tooltip" data-placement="top" title="Сортировать по названию">
+							<i class="fa fa-font" aria-hidden="true"></i>
+							<i class="fa fa-sort-asc" aria-hidden="true"></i>
+							<i class="fa fa-sort-desc" aria-hidden="true"></i>
+						</a>
+						<a class="sort-grup-icon" data-name="status" data-sort="public" data-url="ajax/admin/carousel/sort/" data-action-click="filterSort" data-toggle="tooltip" data-placement="top" title="Сортировать по статусу активности">
+							<i class="fa fa-circle" aria-hidden="true"></i>
+							<i class="fa fa-circle-o" aria-hidden="true"></i>
+						</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<h3 class="title">Сайдер</h3>
+				<div class="description">модуль</div>
+			</div>
+
+			<div class="section-body">
+				<div class="results-search"></div>
+				<div class="results">
+					<ul class="wrapper-list list-group">
+
+						<?php foreach ($slides as $value) { ?>
+							<!-- ITEM-->
+							<li class="list-group-item">
+								<span class="<?=$value['status'] == 1 ? 'active' : '' ?>" data-action-click="loadSlidePreview" data-url="<?=Core::gi()->Request->get_link('/admin/carousel/load/'.$value['id'], 'ajax')?>">
+									<i class="fa fa-circle<?= $value['status'] == 1 ? '' : '-o'?>" aria-hidden="true"></i>
+									<?= $value['name'] ?>
+								</span>
+								<div class="pull-right">
+									<a class="btn-revove" data-toggle="tooltip" data-placement="top" title="Удалить слайд '<?= $value['name'] ?>'" data-url="/admin/ajax/carousel/remove/<?=$value['id']?>/" data-action-click="removeItem" data-confirm="Удалить слайд '<?= $value['name'] ?>' ?">
+										<i class="fa fa-trash-o" aria-hidden="true"></i>
+									</a>
+								</div>
+
+								<div class="clearfix"></div>
+							</li>
+						<?php } ?>
+
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- / ------- *SECTION WORDS END* -------/-->
+	</div>
+
+	<div class="col-md-5 pull-right">
+		<div class="wrapper-preview" style="max-width: 320px">
+			<a href="/admin/modules/item/carousel/add/" class="btn btn-success btn-lg" style="margin-bottom: 30px; width: 100%;">Новый слайд</a>
+		</div>
+	</div>
+</div>

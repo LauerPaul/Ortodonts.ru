@@ -1,0 +1,145 @@
+<?=$breadcrumbs?>
+<form class="post" id="SaveMainPage" action="/ajax/admin/page_about/save/settings/" method="POST" success-function="page_home.successSEOsave">
+	<div class="row">
+		<div class="col-md-12">
+			<section>
+				<div class="section-head">
+					<div class="top-line">
+						<div class="clearfix"></div>
+					</div>
+					<h3 class="title">Параметры главной страницы</h3>
+					<div class="description">основное</div>
+				</div>
+
+				<div class="section-body">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="input-group margin">
+								<label>
+									<input id="status" type="checkbox" name="page_about" value="1" <?=Core::gi()->cfg->Get('page_about') ? 'checked' : ''?>>
+									Отображать страницу
+								</label>
+								<span class="circle-info" data-toggle="tooltip" title="Активируйте опцию, чтоб отображать страницу.">
+									<i class="lauer-info"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="input-group margin">
+								<label>
+									<input id="status" type="checkbox" name="link_about_menu" value="1" <?=Core::gi()->cfg->Get('link_about_menu') ? 'checked' : ''?>>
+									Отображать в меню
+								</label>
+								<span class="circle-info" data-toggle="tooltip" title="Активируйте опцию, чтоб отображать страницу.">
+									<i class="lauer-info"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="input-group margin">
+								<label>
+									<input id="status" type="checkbox" name="setting_about_s_status" value="1" <?=$page['setting_about_s_status']['value'] ? 'checked' : ''?>>
+									Отображать секцию "О себе" на странице
+								</label>
+								<span class="circle-info" data-toggle="tooltip" title="Активируйте опцию, чтоб отображать секцию 'О себе' на странице.">
+									<i class="lauer-info"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="input-group margin">
+								<label>
+									<input id="status" type="checkbox" name="setting_about_s_certificates" value="1" <?=$page['setting_about_s_certificates']['value'] ? 'checked' : ''?>>
+									Отображать модуль сертификатов на странице
+								</label>
+								<span class="circle-info" data-toggle="tooltip" title="Активируйте опцию, чтоб отображать модуль сертификатов на странице.">
+									<i class="lauer-info"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="input-group margin">
+								<label>
+									<input id="status" type="checkbox" name="setting_about_s_education" value="1" <?=$page['setting_about_s_education']['value'] ? 'checked' : ''?>>
+									Отображать список образования на странице
+								</label>
+								<span class="circle-info" data-toggle="tooltip" title="Активируйте опцию, чтоб отображать список образования на странице.">
+									<i class="lauer-info"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="input-group margin">
+								<label>
+									<input id="status" type="checkbox" name="setting_about_s_topsection" value="1" <?=$page['setting_about_s_topsection']['value'] ? 'checked' : ''?>>
+									Отображать верхнюю секцию с баннером
+								</label>
+								<span class="circle-info" data-toggle="tooltip" title="Активируйте опцию, чтоб отображать верхнюю секцию с баннером.">
+									<i class="lauer-info"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="input-group margin">
+								<label>
+									<input id="status" type="checkbox" name="setting_faq_s_status" value="1" <?=$page['setting_faq_s_status']['value'] ? 'checked' : ''?>>
+									Отображать модуль "FAQ" на странице
+								</label>
+								<span class="circle-info" data-toggle="tooltip" title="Активируйте опцию, чтоб отображать модуль 'FAQ' на странице.">
+									<i class="lauer-info"></i>
+								</span>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<div class="input-group margin">
+								<label>
+									<input id="status" type="checkbox" name="setting_feedback_s_status" value="1" <?=$page['setting_feedback_s_status']['value'] ? 'checked' : ''?>>
+									Отображать модуль "Оставить заявку" на странице
+								</label>
+								<span class="circle-info" data-toggle="tooltip" title="Активируйте опцию, чтоб отображать модуль 'Оставить заявку' на странице.">
+									<i class="lauer-info"></i>
+								</span>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<input type="hidden" name="test" value="clear">
+					<div class="clearfix"></div>
+					<br>
+					<button class="btn btn-default margin-top-20">
+						Сохранить
+					</button>
+					<a href="/admin/page_about/" class="btn btn-danger margin-top-20">
+						Отмена
+					</a>
+				</div>
+			</section>
+		</div>
+	</div>
+</form>
+
+
+<!-- Modal -->
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"  data-action-click="hideCropperModal"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+			</div>
+
+			<form class="modal-body post" action="" method="POST" success-function="" id="ModalForm">
+				<div style="width: 100%;">
+					<img src="" id="previewImage">
+				</div>
+			</form>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-action-click="hideCropperModal" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" data-action-click=" getCroppedCanvas" data-url="/ajax/admin/page_about/save/image/about/" data-width="606" data-height="">Сохранить</button>
+			</div>
+
+		</div>
+	</div>
+</div>

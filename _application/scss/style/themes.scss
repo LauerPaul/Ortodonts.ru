@@ -171,3 +171,9 @@ h1, h2 {
         float: left;
     }
 }
+
+@media (max-width: 767px) {
+    .page-link {
+        padding: 3px 8px;
+    }
+}

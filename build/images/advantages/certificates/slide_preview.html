@@ -1,0 +1,46 @@
+<section class="post-preview" style="margin-right: 0px;">
+	<div class="section-head">
+		<h3 class="title">Слайд <strong><?=$item['name']?></strong></h3>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+
+			<div class="post-preview-wrapper">
+				<div class="image">
+					<img src="<?=$item['image']?>" id="" style="max-width: 100%;">
+				</div>
+				<?php if($item['title'] !== ''){ ?>
+					<h4 class="title">
+						<strong>Заголовок: </strong>
+						<?=$item['title']?>
+					</h4>
+				<?php } ?>
+				<?php if($item['description'] !== ''){ ?>
+					<div class="description">
+						<strong>Описание: </strong>
+						<?=$item['description']?>
+					</div>
+				<?php } ?>
+				<div class="description">
+					<strong>Кнопка: </strong>
+					<?=$item['button'] ? 'Да' : 'Нет' ?>
+				</div>
+				<div class="description">
+					<strong>Статус: </strong>
+					<?=$item['status'] ? 'Отображается' : 'Отключен' ?>
+				</div>
+				<div class="date">Sort: <?=$item['sort']?></div>
+				<div class="clearfix"></div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<a href="/admin/modules/item/carousel/slide/<?=$item['id']?>/" class="btn btn-default">Редактировать</a>
+			<a class="btn btn-danger" onclick="$(this).parents('section').remove()">Отмена</a>
+		</div>
+	</div>
+
+</section>

@@ -1,0 +1,46 @@
+.post-bage {
+	padding-top: 80px;
+
+	.title {
+		color: rgba(0,0,0,.87);
+		font-size: 48px;
+		font-family: 'UbuntuBold';
+		font-weight: normal;
+		letter-spacing: 0.5px;
+		margin-top: 0px;
+		padding-top: 0px;
+		padding-bottom: 0px;
+		margin-bottom: 40px;
+	}
+
+	.date {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		color: rgba(0,0,0,.42);
+	}
+
+	.container {
+		max-width: 980px;
+
+		&.content {
+			padding-top: 20px;
+			padding-bottom: 40px;
+		}
+	}
+
+	img {
+		max-width: 100%;
+	}
+}
+
+.post-social {
+	margin-bottom: 40px;
+	
+	a.social {
+	    font-size: 18px;
+	    margin: 10px 5px;
+	    text-decoration: none;
+	    color: #212431;
+	    cursor: pointer;
+	}
+}

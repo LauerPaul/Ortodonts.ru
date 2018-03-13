@@ -1,0 +1,136 @@
+<form class="post" id="editSlide" action="/ajax/admin/carousel/save/<?=$slide['id']?>/" method="POST" success-function="slide.successEDITslide">
+
+	<div class="row">
+		<div class="col-md-7">
+			<section>
+				<div class="section-head">
+					<h3 class="title">Слайд</h3>
+					<div class="description">редактирование слайда</div>
+				</div>
+
+				<div class="wrapper-image" style="margin-top: 20px;">
+					<span class="inf">
+						<i class="fa fa-picture-o" aria-hidden="true"></i>
+						Нажмите для загрузки изображения
+					</span>
+					<div class="image">
+						<img src="<?=$slide['image']?>" id="" style="max-width: 100%;">
+					</div>
+					<input type="file" id="slide" class="hide_file" accept="image/jpeg,image/png" onchange="change.loadImage(this, 'previewImage')" data-width='570' data-height="158">
+				</div>
+
+				<div class="input-group margin">
+					<input class="form-control" type="text" placeholder="Название слайда" name="name" value="<?=$slide['name']?>" required/>
+					<span class="input-group-addon" data-toggle="tooltip" title="Данная информация не отображается на сайте.">
+						<i class="lauer-info"></i>
+					</span>
+				</div>
+
+				<div class="input-group margin">
+					<input class="form-control" type="text" placeholder="Заголовок статьи" name="title" value="<?=$slide['title']?>"/>
+					<span class="input-group-addon" data-toggle="tooltip" title="Текст будет отображен на слайде.">
+						<i class="lauer-info"></i>
+					</span>
+				</div>
+
+				<div class="input-group margin">
+					<input class="form-control" type="text" placeholder="Ссылка" name="link" value="<?=$slide['link']?>"/>
+					<span class="input-group-addon" data-toggle="tooltip" title="Укажите ссылку, по которой пользователь перейдет нажав на слайд или кнопку.">
+						<i class="lauer-info"></i>
+					</span>
+				</div>
+
+				<div class="input-group margin">
+					<input class="form-control" type="text" placeholder="Alt" name="alt" value="<?=$slide['alt']?>"/>
+					<span class="input-group-addon" data-toggle="tooltip" title="Alt - SEO тег (описание изображения).">
+						<i class="lauer-info"></i>
+					</span>
+				</div>
+
+				<div class="input-group margin" style="width: 100%;">
+					<textarea class="form-control" name="description" rows="5" placeholder="Краткое описание статьи" id="description" style="border-radius: 0px; border-right: 1px solid #ccc;"><?=$slide['description']?></textarea>
+					<span class="circle-info absolute" data-toggle="tooltip" title="Краткое описание будет отображено в превью статьи.">
+						<i class="lauer-info"></i>
+					</span>
+				</div>
+
+			</section>
+		</div>
+		<div class="col-md-3">
+
+			<div class="input-group margin" style="max-width: 170px;">
+				<input class="form-control" type="text" placeholder="0" name="sort" value="<?=$slide['sort']?>" required/>
+				<span class="input-group-addon" data-toggle="tooltip" title="Порядок сортировки (число от 0 до 9, где 0 первый элемент).">
+					<i class="lauer-info"></i>
+				</span>
+			</div>
+
+			<div class="input-group margin">
+				<label>
+					<input id="new_window" type="checkbox" name="new_window" value="1" <?=$slide['new_window'] ? 'checked' : ''?>>
+					Переход в новом окне
+				</label>
+				<span class="circle-info" data-toggle="tooltip" title="Активируйте опцию, чтобы, при клике, переход по ссылке был в новом окне.">
+					<i class="lauer-info"></i>
+				</span>
+			</div>
+
+			<div class="input-group margin">
+				<label>
+					<input id="button" type="checkbox" name="button" value="1" <?=$slide['button'] ? 'checked' : ''?>>
+					Отображать кнопку
+				</label>
+				<span class="circle-info" data-toggle="tooltip" title="Активируйте опцию, чтобы на слайлде отображалась кнопка 'Подробнее'.">
+					<i class="lauer-info"></i>
+				</span>
+			</div>
+
+			<div class="input-group margin">
+				<label>
+					<input id="status" type="checkbox" name="status" value="1" <?=$slide['status'] ? 'checked' : ''?>>
+					Отображать на сайте
+				</label>
+				<span class="circle-info" data-toggle="tooltip" title="Активируйте опцию, чтобы слайд отображался на сайте.">
+					<i class="lauer-info"></i>
+				</span>
+			</div>
+
+			<button class="btn btn-default margin-top-20">
+				Сохранить
+			</button>
+			<a href="/admin/modules/item/carousel/" class="btn btn-danger margin-top-20">
+				Отмена
+			</a>
+
+		</div>
+	</div>
+
+</form>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="Modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"  data-action-click="hideCropperModal"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Подготовка слайда</h4>
+			</div>
+
+			<form class="modal-body post" action="" method="POST" success-function="" id="ModalForm">
+				<div style="width: 100%;">
+					<img src="" id="previewImage">
+				</div>
+			</form>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-action-click="hideCropperModal" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" data-action-click="getCroppedCanvas" data-url="/ajax/admin/carousel/slide/<?=$slide['id']?>/" data-width="1920" data-height="560">Сохранить</button>
+			</div>
+
+		</div>
+	</div>
+</div>
